@@ -23,10 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('image')->nullable();
             $table->string('phone');
             $table->string('personal_code');
-            $table->integer('role_id');
-            $table->foreign('role_id')->references('id')->on('roles');
-            $table->integer('user_status_id');
-            $table->foreign('user_status_id')->references('id')->on('user_statuses');
+            $table->integer('role_id')->unsigned()->nullable();
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null')->onUpdate('cascade');
+            $table->integer('user_status_id')->unsigned()->nullable();
+            $table->foreign('user_status_id')->references('id')->on('user_statuses')->onDelete('set null')->onUpdate('cascade');
             $table->integer('penalty')->nullable();
             $table->timestamps();
         });

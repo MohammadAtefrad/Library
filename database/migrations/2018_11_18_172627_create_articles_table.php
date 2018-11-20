@@ -15,16 +15,16 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('title');
-            $table->integer('article_category_id');
-            $table->foreign('article_category_id')->references('id')->on('article_categories');
+            $table->string('title', 255);
+            $table->integer('article_category_id')->unsigned()->nullable();
+            $table->foreign('article_category_id')->references('id')->on('article_categories')->onDelete('set null')->onUpdate('cascade');
             $table->string('publisher')->nullable();
-            $table->string('autor')->nullable();
-            $table->text('abstract')->nullable();
-            $table->date('published_date')->nullable();
-            $table->string('keywords')->nullable();
-            $table->integer('article_status_id');
-            $table->foreign('article_status_id')->references('id')->on('article_statuses');
+            $table->string('author')->nullable();
+            $table->text('abstract');
+            $table->date('published_date');
+            $table->string('keywords', 255)->nullable();
+            $table->integer('article_status_id')->unsigned()->nullable();
+            $table->foreign('article_status_id')->references('id')->on('article_statuses')->onDelete('set null')->onUpdate('cascade');
             $table->text('download_link')->nullable();
             $table->integer('download_count')->nullable();
             $table->timestamps();

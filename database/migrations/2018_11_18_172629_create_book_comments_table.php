@@ -16,13 +16,13 @@ class CreateBookCommentsTable extends Migration
         Schema::create('book_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->text('body');
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('book_id');
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
+            $table->integer('book_id')->unsigned()->nullable();
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('reference_comment_id')->nullable();
-            $table->integer('comment_status_id');
-            $table->foreign('comment_status_id')->references('id')->on('comment_statuses');
+            $table->integer('comment_status_id')->unsigned()->nullable();
+            $table->foreign('comment_status_id')->references('id')->on('comment_statuses')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();
         });
     }

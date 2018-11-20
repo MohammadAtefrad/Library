@@ -16,7 +16,7 @@ class CreateArticleStatusesTable extends Migration
         Schema::create('article_statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('article_status');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
