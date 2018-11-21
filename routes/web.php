@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', ['as' => 'firstpage.index', 'uses' => 'FirstPageController@index']);
+Route::get('/contact', ['as' => 'firstpage.contactus', 'uses' => 'FirstPageController@contact_us']);
+Route::get('/search', ['as' => 'firstpage.search', 'uses' => 'FirstPageController@search']);
