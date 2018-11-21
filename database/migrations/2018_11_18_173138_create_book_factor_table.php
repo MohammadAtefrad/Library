@@ -14,10 +14,15 @@ class CreateBookFactorTable extends Migration
     public function up()
     {
         Schema::create('book_factor', function (Blueprint $table) {
-            $table->primary(['book_id', 'factor_id'])->unsigned();
-            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
-            // $table->integer('factor_id')->primary()->unsigned();
-            $table->foreign('factor_id')->references('id')->on('factors')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('book_id')->unsigned()->index('idx_book_factor_book_id');
+			$table->integer('factor_id')->unsigned()->index('idx_book_factor_factor_id');
+            $table->primary(['book_id','factor_id']);
+            $table->foreign('book_id', 'fk_book_factor_books')->references('id')->on('books')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('factor_id', 'fk_book_factor_factors')->references('id')->on('factors')->onUpdate('CASCADE')->onDelete('CASCADE');
+
+            // $table->primary(['book_id', 'factor_id'])->unsigned();
+            // $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('factor_id')->references('id')->on('factors')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
