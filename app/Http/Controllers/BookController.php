@@ -6,7 +6,22 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index()
+    public function all_books()
+    {
+        //
+    }
+
+    public function one_book()
+    {
+        //
+    }
+
+    public function books_by_category()
+    {
+        //
+    }
+
+    public function books_by_alfabet()
     {
         //
     }
