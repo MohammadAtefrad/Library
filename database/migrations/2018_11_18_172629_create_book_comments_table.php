@@ -13,8 +13,7 @@ class CreateBookCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('book_comments', function (Blueprint $table)
-        {
+        Schema::create('book_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->text('body');
             $table->integer('user_id')->unsigned()->nullable();

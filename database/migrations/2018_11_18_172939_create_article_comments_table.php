@@ -13,8 +13,7 @@ class CreateArticleCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_comments', function (Blueprint $table)
-        {
+        Schema::create('article_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->text('body');
             $table->integer('user_id')->unsigned()->nullable();
