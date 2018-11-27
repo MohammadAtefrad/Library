@@ -13,8 +13,7 @@ class CreateArticleCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_categories', function (Blueprint $table)
-        {
+        Schema::create('article_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('article_category');
             $table->timestamps();

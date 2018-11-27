@@ -10,7 +10,7 @@ class FirstPageController extends Controller
 {
     public function index()
     {
-        // $user = User::where('id', 5)->with('books.bookComments')->get();
+        $user = User::where('id', 5)->with('books.bookComments')->get();
         return ($user);
     }
 

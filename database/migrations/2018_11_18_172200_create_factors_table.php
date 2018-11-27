@@ -13,14 +13,11 @@ class CreateFactorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('factors', function (Blueprint $table)
-        {
+        Schema::create('factors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('books_number');
-            $table->integer('factor_status_id')->unsigned()->nullable();
-            $table->foreign('factor_status_id')->references('id')->on('factor_statuses')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();
         });
     }
