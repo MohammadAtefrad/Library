@@ -2,33 +2,46 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+/**
+ * @property int $id
+ * @property int $role_id
+ * @property int $user_status_id
+ * @property string $firstname
+ * @property string $lastname
+ * @property string $name
+ * @property string $username
+ * @property string $email
+ * @property string $email_verified_at
+ * @property string $password
+ * @property string $remember_token
+ * @property string $image
+ * @property string $phone
+ * @property string $personal_code
+ * @property int $penalty
+ * @property string $created_at
+ * @property string $updated_at
+ * @property Role $role
+ * @property UserStatus $userStatus
+ * @property ArticleComment[] $articleComments
+ * @property ArticleUser[] $articleUsers
+ * @property BookComment[] $bookComments
+ * @property BookUser[] $bookUsers
+ * @property Factor[] $factors
+ * @property Message[] $messages
+ * @property Message[] $messages
+ * @property PostComment[] $postComments
+ * @property Post[] $posts
+ */
+class User extends Model
 {
-    use Notifiable;
-
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ['role_id', 'user_status_id', 'firstname', 'lastname', 'name', 'username', 'email', 'email_verified_at', 'password', 'remember_token', 'image', 'phone', 'personal_code', 'penalty', 'created_at', 'updated_at'];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function role()
@@ -53,11 +66,11 @@ class User extends Authenticatable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function articles()
+    public function articleUsers()
     {
-        return $this->belongsToMany('App\Article');
+        return $this->hasMany('App\ArticleUser');
     }
 
     /**
@@ -69,11 +82,11 @@ class User extends Authenticatable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function books()
+    public function bookUsers()
     {
-        return $this->belongsToMany('App\Book');
+        return $this->hasMany('App\BookUser');
     }
 
     /**
@@ -82,6 +95,22 @@ class User extends Authenticatable
     public function factors()
     {
         return $this->hasMany('App\Factor');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function messages()
+    {
+        return $this->hasMany('App\Message', 'from_user_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function messages2()
+    {
+        return $this->hasMany('App\Message', 'to_user_id');
     }
 
     /**

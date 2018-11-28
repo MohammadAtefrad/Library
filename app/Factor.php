@@ -7,16 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $id
  * @property int $user_id
+ * @property int $factor_status_id
  * @property int $books_number
+ * @property string $created_at
+ * @property string $updated_at
+ * @property FactorStatus $factorStatus
  * @property User $user
- * @property Book[] $books
+ * @property BookFactor[] $bookFactors
+ * @property Message[] $messages
  */
 class Factor extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'books_number'];
+    protected $fillable = ['user_id', 'factor_status_id', 'books_number', 'created_at', 'updated_at'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function factorStatus()
+    {
+        return $this->belongsTo('App\FactorStatus');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -27,10 +40,18 @@ class Factor extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function books()
+    public function bookFactors()
     {
-        return $this->belongsToMany('App\Book');
+        return $this->hasMany('App\BookFactor');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
     }
 }
