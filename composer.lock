@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "f026744dc476a38ac74a5903e0f87d35",
     "packages": [
         {
@@ -62,6 +63,11 @@
             "time": "2018-10-29T11:13:48+00:00"
         },
         {
+=======
+    "content-hash": "9d6db6ff365d84f80ae8377536d49200",
+    "packages": [
+        {
+>>>>>>> parent of b1c639c... add messages tables.
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
             "source": {

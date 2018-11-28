@@ -13,7 +13,8 @@ class CreatePostStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_statuses', function (Blueprint $table) {
+        Schema::create('post_statuses', function (Blueprint $table)
+        {
             $table->increments('id');
             $table->string('post_status');
             $table->timestamps();
