@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>صحفه اصلی</title>
+    <title>صفحه اصلی</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/fontiran.css" rel="stylesheet">
@@ -28,14 +28,10 @@
     @include('layouts.navbar')
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-
                 @yield('content')
-
             </div>
 
             <!-- Blog Sidebar Widgets Column -->

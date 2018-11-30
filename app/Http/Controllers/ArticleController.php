@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Article;
 use Illuminate\Support\Facades\Validator;
 use App\ArticleCategory;
+use App\User;
 
 class ArticleController extends Controller
 {
     public function all_articles()
     {
-        $articles = Article::latest()->paginate(10);
+        $articles = User::latest()->paginate(10);
+        return $articles;
         return view('article.allarticles', compact('articles'));
     }
 
