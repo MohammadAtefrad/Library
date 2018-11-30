@@ -69,7 +69,6 @@ span {
   border: 1px solid #fff;
   border-radius: 50px;
   color: #fff;
-  font-size: 11px;
   font-weight: 600;
   padding: 15px 40px;
   text-transform: uppercase;
@@ -174,11 +173,11 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 40px);
+  /* height: calc(100vh - 40px); */
+  width: 100%;
   background: url(../img/hero-bg.png) center bottom no-repeat;
   background-size: 100%;
   position: relative;
-  margin-top: 40px;
 }
 
 @media (min-width: 1025px) {
@@ -205,8 +204,7 @@ span {
 }
 
 #hero img {
-  max-width: 95%;
-  margin-bottom: 30px;
+  max-width: 100%;
 }
 
 #hero .btn-get-started {
@@ -488,8 +486,8 @@ body.mobile-nav-active #mobile-nav-toggle i {
 # Sections
 --------------------------------------------------------------*/
 .padd-section {
-  padding-bottom: 80px;
-  padding-top: 80px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 @media (max-width: 992px) {
@@ -979,14 +977,10 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
 /* Blog Section
 --------------------------------*/
-@media (max-width: 991px) {
-  #blog .block-blog {
-    margin-bottom: 30px;
-  }
-}
 
 #blog .block-blog img {
-  width: 100%;
+    padding: 0px 15px;
+    width: 100%;
 }
 
 #blog .block-blog .content-blog {
@@ -994,10 +988,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
   min-height: 125px;
   padding: 20px 10px;
   width: 100%;
-}
-
-#blog .block-blog .content-blog h4 {
-  text-transform: capitalize;
 }
 
 #blog .block-blog .content-blog h4 a {

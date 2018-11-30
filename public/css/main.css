@@ -1,36 +1,9 @@
-/* Grouping content
-   ========================================================================== */
-/**
- * Add the correct display in IE 9-.
- * 1. Add the correct display in IE.
- */
-/* figcaption,
-figure,
-main {
-  /* 1 */
-  display: block;
-} */
-
 /**
  * Add the correct margin in IE 8.
  */
 figure {
   margin: 1em 40px;
 }
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-/* hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-} */
-
 
 /* Text-level semantics
    ========================================================================== */
@@ -163,25 +136,6 @@ svg:not(:root) {
 
 /* Forms
    ========================================================================== */
-/**
- * 1. Change the font styles in all browsers (opinionated).
- * 2. Remove the margin in Firefox and Safari.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-}
-
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -373,10 +327,6 @@ template {
  */
 [hidden] {
   display: none;
-}
-
-html {
-  height: 100%;
 }
 
 fieldset {
@@ -762,8 +712,6 @@ legend {
 }
 
 .s003 {
-  min-height: 100px;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
@@ -790,12 +738,8 @@ legend {
   -ms-flex-align: center;
       align-items: center;
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
+  border-radius: 5px;
 }
-
-/* .s003 form .inner-form .input-field {
-  height: 68px;
-} */
 
 .s003 form .inner-form .input-field input {
   height: 100%;
@@ -804,23 +748,19 @@ legend {
   display: block;
   width: 100%;
   padding: 10px 32px;
-  font-size: 16px;
   color: #555;
 }
 
 .s003 form .inner-form .input-field input.placeholder {
   color: #888;
-  font-size: 16px;
 }
 
 .s003 form .inner-form .input-field input:-moz-placeholder {
   color: #888;
-  font-size: 16px;
 }
 
 .s003 form .inner-form .input-field input::-webkit-input-placeholder {
   color: #888;
-  font-size: 16px;
 }
 
 .s003 form .inner-form .input-field input:hover, .s003 form .inner-form .input-field input:focus {
@@ -915,16 +855,11 @@ legend {
 .s003 form .inner-form .input-field.third-wrap .btn-search {
   height: 100%;
   width: 100%;
-  white-space: nowrap;
   color: #fff;
   border: 0;
   cursor: pointer;
   background: #63c76a;
   transition: all .2s ease-out, color .2s ease-out;
-}
-
-.s003 form .inner-form .input-field.third-wrap .btn-search svg {
-  width: 16px;
 }
 
 .s003 form .inner-form .input-field.third-wrap .btn-search:hover {

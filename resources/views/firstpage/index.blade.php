@@ -4,7 +4,6 @@
 <section id="blog" class="padd-section wow fadeInUp">
     <div class="container">
       <div class="section-title text-center">
-
         <h2>آخرین کتاب ها</h2>
         <p class="separator">آخرین کتاب هایی که به سایت اضافه شده است</p>
       </div>
@@ -12,9 +11,9 @@
     <div class="container-fluid ">
         <div class="row ">
             @foreach ($books as $book)
-            <div class="col-md-6 col-lg-4 pb-4">
+            <div class="col-md-6 col-lg-3 pb-4">
               <div class="block-blog shadow">
-                <a href="#"><img src="img/blog/blog-image-1.jpg" alt="img"></a>
+                <a href="#"><img src="img/blog/book.jpg" alt="img"></a>
                 <div class="content-blog">
                   <h4><a href="#">{{ $book->name }}</a></h4>
                   <h3>{{ $book->bookCategory['book_category'] }}</h3>
