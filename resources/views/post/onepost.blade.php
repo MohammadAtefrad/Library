@@ -1,0 +1,1 @@
+shoe one post and its comments

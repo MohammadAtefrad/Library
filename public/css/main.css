@@ -134,17 +134,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-/* Forms
-   ========================================================================== */
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-button,
-input {
-  /* 1 */
-  overflow: visible;
-}
+/* Forms ========================================================================== */
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -707,10 +697,6 @@ legend {
 }
 
 /*=====  End of Choices  ======*/
-* {
-  box-sizing: border-box;
-}
-
 .s003 {
   display: flex;
   -ms-flex-pack: center;
@@ -770,7 +756,7 @@ legend {
 }
 
 .s003 form .inner-form .input-field.first-wrap {
-  width: 200px;
+  width: 200px; 
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -848,9 +834,9 @@ legend {
       flex-grow: 1;
 }
 
-.s003 form .inner-form .input-field.third-wrap {
+/* .s003 form .inner-form .input-field.third-wrap {
   width: 74px;
-}
+} */
 
 .s003 form .inner-form .input-field.third-wrap .btn-search {
   height: 100%;
@@ -872,9 +858,9 @@ legend {
 }
 
 @media screen and (max-width: 992px) {
-  .s003 form .inner-form .input-field {
-    height: 50px;
-  }
+  /* .s003 form .inner-form .input-field {
+    height: 40px;
+  } */
 }
 
 @media screen and (max-width: 767px) {
@@ -885,6 +871,7 @@ legend {
   }
   .s003 form .inner-form .input-field {
     margin-bottom: 20px;
+    height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .s003 form .inner-form .input-field input {

@@ -74,3 +74,17 @@ Route::post('/comment/add', ['as' => 'comment.add', 'uses' => 'CommentController
 // route::post('/article/{article}/comment',
 Route::get('/comment/edit', ['as' => 'comment.edit', 'uses' => 'CommentController@edit_comment']);
 Route::get('/comment/edit', ['as' => 'comment.edit', 'uses' => 'CommentController@delete_comment']);
+
+/**
+ * user controller routes
+ */
+Route::get('/user/index', ['as' => 'user.index', 'uses' => 'UserController@index']);
+Route::get('/user/{user}', ['as' => 'user.editprofile', 'uses' => 'UserController@edit_profile']);
+Route::post('/user', ['as' => 'user.updateprofile', 'uses' => 'UserController@update_profile']);
+Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
+Route::get('/user/{factor}', ['as' => 'user.factor', 'uses' => 'UserController@factor']);
+Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
+Route::get('/user/usersbookarticle', ['as' => 'user.bookarticle', 'uses' => 'UserController@users_book_article']);
+Route::get('/user/{comments}', ['as' => 'user.comments', 'uses' => 'UserController@comments']);
+Route::get('/user/{messages}', ['as' => 'user.messages', 'uses' => 'UserController@messages']);
+Route::get('/user/sendmessage', ['as' => 'user.sendmessage', 'uses' => 'UserController@send_message']);

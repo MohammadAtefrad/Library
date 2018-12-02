@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
 
 class BookController extends Controller
 {
@@ -11,9 +12,11 @@ class BookController extends Controller
         //
     }
 
-    public function one_book()
+    public function one_book(Book $book)
     {
-        //
+        $comments = $book->bookComments()->get();
+        $book=$comments=[];
+        return view('book.onebook', compact('book' , 'comments'));
     }
 
     public function books_by_category()

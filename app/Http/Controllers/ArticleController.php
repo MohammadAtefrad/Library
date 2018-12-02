@@ -13,13 +13,13 @@ class ArticleController extends Controller
     public function all_articles()
     {
         $articles = User::latest()->paginate(10);
-        return $articles;
         return view('article.allarticles', compact('articles'));
     }
 
     public function one_article(Article $article)
     {
         $comments = $article->articleComments()->get();
+        $article=$comments=[];
         return view('article.onearticle', compact('article' , 'comments'));
     }
 

@@ -22,7 +22,7 @@ class FirstPageController extends Controller
 
     public function search()
     {
-        //
+        return view('firstpage.search');
     }
 
 }

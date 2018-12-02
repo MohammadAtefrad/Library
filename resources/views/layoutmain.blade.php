@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-{{-- <html lang="en"> --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
-    <title>eStartup Bootstrap Template</title>
+    <title>کتابخانه</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,12 +43,11 @@
 </head>
 
 <body>
+    <!-- header -->
     <header id="header" class="header header-hide">
         <div class="container">
             <div id="logo" class="pull-left">
                 <h1><a href="#body" class="scrollto">کتابخانه</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
             </div>
 
             <nav id="nav-menu-container">
@@ -79,7 +77,7 @@
             {{-- search box --}}
             <div class="row col-10 col-md-8 mx-auto s003">
                 <h1>به کتابخانه ... خوش آمدید</h1>
-                <form class="bg-white">
+                <form class="bg-white rounded mt-4">
                     <div class="inner-form">
                         <div class="input-field first-wrap">
                             <div class="input-select">
@@ -93,7 +91,7 @@
                             <input id="search" type="text" placeholder="Enter Keywords" />
                         </div>
                         <div class="input-field third-wrap">
-                            <button class="btn-search" type="button">جستجو</button>
+                            <button class="btn-search rounded" type="button">جستجو</button>
                         </div>
                     </div>
                 </form>
@@ -503,8 +501,7 @@
         <div class="container">
             <div class="section-title text-center">
                 <h2>Contact</h2>
-                <p class="separator">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque</p>
+                <p class="separator">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
             </div>
         </div>
 
@@ -660,7 +657,7 @@
 
     <!-- Template Main Javascript File -->
     <script src="/js/main.js"></script>
-    <!-- serch box -->
+    <!-- search box -->
     <script src="/js/extention/choices.js"></script>
     <script>
         const choices = new Choices('[data-trigger]', {
