@@ -1,1 +1,4 @@
-users profile information and a edit bottun
+@extends('layoutuser')
+@section('content')
+
+@endsection

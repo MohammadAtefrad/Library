@@ -1,7 +1,7 @@
 @extends('layoutmain')
 @section('content')
 <!-- books -->
-<section id="blog" class="padd-section wow fadeInUp">
+<section id="blog" class="padd-section wow fadeInUp text-right">
     <div class="container">
       <div class="section-title text-center">
         <h2>آخرین کتاب ها</h2>

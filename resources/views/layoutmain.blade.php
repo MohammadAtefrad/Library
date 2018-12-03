@@ -15,10 +15,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
         rel="stylesheet">
-    <!-- Bootstrap css -->
-    {{--
-    <link rel="stylesheet" href="/css/bootstrap.css"> --}}
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Libraries CSS Files -->
     <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
@@ -32,13 +29,14 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap css -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link href="/css/bootstrap-rtl.min.css" rel="stylesheet"> --}}
+    
     <link href="/css/fontiran.css" rel="stylesheet">
-    {{--
-    <link href="/css/bootstrap.min.css" rel="stylesheet"> --}}
-    {{--
-    <link href="/css/bootstrap-rtl.min.css" rel="stylesheet"> --}}
+    <!-- Main Stylesheet File -->
     <link href="/css/style.css" rel="stylesheet">
+    {{-- <link href="/css/styles.rtl.css" rel="stylesheet"> --}}
     @yield('styles')
 </head>
 
@@ -74,6 +72,7 @@
     <div class="d-flex position-relative text-center justify-content-center align-items-center shadow">
         <img class=" rounded" src="/img/newsletter-bg.jpg" style="">
         <div class="position-absolute text-white">
+
             {{-- search box --}}
             <div class="row col-10 col-md-8 mx-auto s003">
                 <h1>به کتابخانه ... خوش آمدید</h1>
@@ -97,6 +96,7 @@
                 </form>
             </div>
             {{-- end search box --}}
+
         </div>
     </div>
     {{-- content --}}

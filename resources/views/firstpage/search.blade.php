@@ -2,12 +2,12 @@
 @section('content')
 <div class="row">
     <!-- main content -->
-    <div class="col-8 col-md-9">
+    <div class="col-8 col-md-9 my-3">
         main
     </div>
 
     <!-- Sidebar -->
-    <div class="col-4 col-md-3 border-left text-right">
+    <div class="col-4 col-md-3 border-left border top text-right">
         <div class="d-flex flex-column mr-4">
             <ul class="list-unstyled">
                 <h3 class="my-4">:دسترسی  به کتاب ها</h3>
