@@ -13,12 +13,13 @@
             @foreach ($books as $book)
             <div class="col-md-6 col-lg-3 pb-4">
               <div class="block-blog shadow">
-                <a href="#"><img src="img/blog/book.jpg" alt="img"></a>
+                <a href="#"><img src="/img/blog/book.jpg" alt="img"></a>
                 <div class="content-blog">
-                  <h4><a href="#">{{ $book->name }}</a></h4>
-                  <h3>{{ $book->bookCategory['book_category'] }}</h3>
+                  <h3 class="text-center"><a href="#">{{ $book->name }}</a></h3>
+                  <p>دسته بندی : <span class="font-weight-bold">{{ $book->bookCategory['book_category'] }}</span></p>
+                  <p>نویسنده : <span class="font-weight-bold">{{ $book->author }}</span></p>
                   <span>05, juin 2017</span>
-                  <a class="pull-right readmore" href="#">read more</a>
+                  <a class="pull-right readmore" href="#">بیشتر بخوانیم <i class="fas fa-book"></i></a>
                 </div>
               </div>
             </div>

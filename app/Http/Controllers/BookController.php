@@ -15,7 +15,7 @@ class BookController extends Controller
     public function one_book(Book $book)
     {
         $comments = $book->bookComments()->get();
-        $book=$comments=[];
+        $book=Book::find(1);
         return view('book.onebook', compact('book' , 'comments'));
     }
 

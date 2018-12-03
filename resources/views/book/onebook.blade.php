@@ -2,29 +2,27 @@
 @section('content')
 <div class="row">
     <!-- main -->
-    <div class="col-8 col-md-9 text-right my-3">
+    <div class="col-8 col-md-9 text-right">
         <div class="d-flex flex-column">
-            <!-- Title -->
-            {{-- <h1>{{ $article->title }}</h1> --}}
-            <!-- Author -->
-            <p class="lead">
-                ارسال شده توسط <a href="index.php">
-                    {{-- {{ $article->user->name }} --}}
-                </a>
-            </p>
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <a href="#"><img class="float-left shadow" src="/img/blog/book.jpg" alt="img"></a>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h1 class="display-5">{{ $book->name }}</h1>
+                        <p class="font-weight-bold">ناشر : {{ $book->publisher }}</p>
+                        <p class="font-weight-bold">نویسنده : {{ $book->author }}</p>
+                        <p class="font-weight-bold">تاریخ انتشار : {{ jdate($book->published_date)->format('%d %B %Y') }}</p>
+                        <p class="font-weight-bold" >وضعیت کتاب : {{ $book->book_status }}</p>    
+                    </div>
+                </div>                
+                <hr class="my-4 shadow">
+                <p class="lead">{{ $book->description }}.</p>
+                <a class="btn btn-success btn-lg" href="#" role="button">سفارش کتاب</a>
+            </div>
             <hr>
-            <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> ارسال شده در تاریخ 
-                {{-- {{ jdate($article->created_at)->format('%d %B، %Y') }} --}}
-            </p>
-            <hr>
-            <!-- Preview Image -->
-            <img class="height: auto" src="http://placehold.it/900x300" alt="">
-            <hr>
-            <!-- Post Content -->
-            {{-- {{ $article->body }} --}}
-            <hr>
-            <!-- Blog Comments -->
+            <!-- Comments -->
             @if (auth()->check())
             <div class="well">
                 @include('layouts.errors')
