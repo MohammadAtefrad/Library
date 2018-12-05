@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
+class ComposerStaticInit4e78f4f0e823fb1e140a0f4a9b33541f
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -134,6 +134,7 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
@@ -380,6 +381,10 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
@@ -474,10 +479,6 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         ),
         'D' => 
         array (
-            'Doctrine\\DBAL\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
-            ),
             'Doctrine\\Common\\Lexer\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
@@ -498,6 +499,26 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Factor' => __DIR__ . '/../..' . '/app/Factor.php',
+        'App\\Http\\Controllers\\Admin\\ArticleCategoryCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticleCategoryCrudController.php',
+        'App\\Http\\Controllers\\Admin\\ArticleCommentCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticleCommentCrudController.php',
+        'App\\Http\\Controllers\\Admin\\ArticleCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticleCrudController.php',
+        'App\\Http\\Controllers\\Admin\\ArticleStatusCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticleStatusCrudController.php',
+        'App\\Http\\Controllers\\Admin\\BookCategoryCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BookCategoryCrudController.php',
+        'App\\Http\\Controllers\\Admin\\BookCommentCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BookCommentCrudController.php',
+        'App\\Http\\Controllers\\Admin\\BookCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BookCrudController.php',
+        'App\\Http\\Controllers\\Admin\\BookStatusCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BookStatusCrudController.php',
+        'App\\Http\\Controllers\\Admin\\CommentStatusCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CommentStatusCrudController.php',
+        'App\\Http\\Controllers\\Admin\\FactorCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FactorCrudController.php',
+        'App\\Http\\Controllers\\Admin\\MessageCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MessageCrudController.php',
+        'App\\Http\\Controllers\\Admin\\MessagePriorityCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MessagePriorityCrudController.php',
+        'App\\Http\\Controllers\\Admin\\MessageStatusCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MessageStatusCrudController.php',
+        'App\\Http\\Controllers\\Admin\\PostCategoryCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostCategoryCrudController.php',
+        'App\\Http\\Controllers\\Admin\\PostCommentCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostCommentCrudController.php',
+        'App\\Http\\Controllers\\Admin\\PostCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostCrudController.php',
+        'App\\Http\\Controllers\\Admin\\PostStatusCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostStatusCrudController.php',
+        'App\\Http\\Controllers\\Admin\\RoleCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoleCrudController.php',
+        'App\\Http\\Controllers\\Admin\\UserCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserCrudController.php',
+        'App\\Http\\Controllers\\Admin\\UserStatusCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserStatusCrudController.php',
         'App\\Http\\Controllers\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArticleController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -521,6 +542,26 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\ArticleCategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ArticleCategoryRequest.php',
+        'App\\Http\\Requests\\ArticleCommentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ArticleCommentRequest.php',
+        'App\\Http\\Requests\\ArticleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ArticleRequest.php',
+        'App\\Http\\Requests\\ArticleStatusRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ArticleStatusRequest.php',
+        'App\\Http\\Requests\\BookCategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BookCategoryRequest.php',
+        'App\\Http\\Requests\\BookCommentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BookCommentRequest.php',
+        'App\\Http\\Requests\\BookRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BookRequest.php',
+        'App\\Http\\Requests\\BookStatusRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BookStatusRequest.php',
+        'App\\Http\\Requests\\CommentStatusRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CommentStatusRequest.php',
+        'App\\Http\\Requests\\FactorRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FactorRequest.php',
+        'App\\Http\\Requests\\MessagePriorityRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MessagePriorityRequest.php',
+        'App\\Http\\Requests\\MessageRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MessageRequest.php',
+        'App\\Http\\Requests\\MessageStatusRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MessageStatusRequest.php',
+        'App\\Http\\Requests\\PostCategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostCategoryRequest.php',
+        'App\\Http\\Requests\\PostCommentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostCommentRequest.php',
+        'App\\Http\\Requests\\PostRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostRequest.php',
+        'App\\Http\\Requests\\PostStatusRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostStatusRequest.php',
+        'App\\Http\\Requests\\RoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RoleRequest.php',
+        'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
+        'App\\Http\\Requests\\UserStatusRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserStatusRequest.php',
         'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
         'App\\MessagePriority' => __DIR__ . '/../..' . '/app/MessagePriority.php',
         'App\\MessageStatus' => __DIR__ . '/../..' . '/app/MessageStatus.php',
@@ -825,6 +866,7 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         'Doctrine\\DBAL\\Driver\\AbstractDriverException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDriverException.php',
         'Doctrine\\DBAL\\Driver\\AbstractMySQLDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php',
         'Doctrine\\DBAL\\Driver\\AbstractOracleDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver.php',
+        'Doctrine\\DBAL\\Driver\\AbstractOracleDriver\\EasyConnectString' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver/EasyConnectString.php',
         'Doctrine\\DBAL\\Driver\\AbstractPostgreSQLDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractPostgreSQLDriver.php',
         'Doctrine\\DBAL\\Driver\\AbstractSQLAnywhereDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLAnywhereDriver.php',
         'Doctrine\\DBAL\\Driver\\AbstractSQLServerDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver.php',
@@ -2651,6 +2693,7 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         'Intervention\\Image\\Size' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Size.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
+        'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
         'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
@@ -3741,6 +3784,7 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/NullLogger.php',
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
         'Psr\\SimpleCache\\CacheException' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheException.php',
         'Psr\\SimpleCache\\CacheInterface' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheInterface.php',
         'Psr\\SimpleCache\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/simple-cache/src/InvalidArgumentException.php',
@@ -4777,11 +4821,11 @@ class ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitb1d5c60ed56d22dbc2b2b1c3acb86c08::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4e78f4f0e823fb1e140a0f4a9b33541f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4e78f4f0e823fb1e140a0f4a9b33541f::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit4e78f4f0e823fb1e140a0f4a9b33541f::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4e78f4f0e823fb1e140a0f4a9b33541f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit4e78f4f0e823fb1e140a0f4a9b33541f::$classMap;
 
         }, null, ClassLoader::class);
     }

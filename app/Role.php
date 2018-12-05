@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property string $role
@@ -11,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Role extends Model
 {
+    use CrudTrait;
+
     /**
      * @var array
      */

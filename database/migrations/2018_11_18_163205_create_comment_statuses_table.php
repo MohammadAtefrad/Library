@@ -15,7 +15,7 @@ class CreateCommentStatusesTable extends Migration
     {
         Schema::create('comment_statuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('comment_status');
+            $table->string('comment_status')->nullable();
             $table->timestamps();
         });
     }

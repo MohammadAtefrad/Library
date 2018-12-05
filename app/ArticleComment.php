@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property int $user_id
@@ -17,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ArticleComment extends Model
 {
+    use CrudTrait;
+
     /**
      * @var array
      */
@@ -44,5 +48,16 @@ class ArticleComment extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    // Self Relation:
+    public function parent()
+    {
+        return $this->belongsTo('App\ArticleComment', 'reference_comment_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('App\ArticleComment', 'reference_comment_id');
     }
 }

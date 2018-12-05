@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property int $from_user_id
@@ -23,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Message extends Model
 {
+    use CrudTrait;
+    
     /**
      * @var array
      */

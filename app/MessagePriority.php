@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property string $message_priority
@@ -13,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MessagePriority extends Model
 {
+    use CrudTrait;
+    
     /**
      * @var array
      */

@@ -2,7 +2,10 @@
 
 namespace App;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
 /**
  * @property int $id
@@ -34,8 +37,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property PostComment[] $postComments
  * @property Post[] $posts
  */
-class User extends Model
+class User extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
+    use CrudTrait;
+
     /**
      * @var array
      */
@@ -66,11 +72,11 @@ class User extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function articleUsers()
+    public function articles()
     {
-        return $this->hasMany('App\ArticleUser');
+        return $this->belongsToMany('App\Article');
     }
 
     /**
@@ -82,11 +88,11 @@ class User extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function bookUsers()
+    public function books()
     {
-        return $this->hasMany('App\BookUser');
+        return $this->belongsToMany('App\Book');
     }
 
     /**

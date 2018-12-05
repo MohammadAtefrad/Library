@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property int $book_category_id
@@ -26,6 +28,16 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Book extends Model
 {
+    use CrudTrait;
+
+  /*
+  |--------------------------------------------------------------------------
+  | GLOBAL VARIABLES
+  |--------------------------------------------------------------------------
+  */
+
+  protected $table = 'books';
+  protected $primaryKey = 'id';
     /**
      * @var array
      */

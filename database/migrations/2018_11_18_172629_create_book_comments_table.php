@@ -16,7 +16,7 @@ class CreateBookCommentsTable extends Migration
         Schema::create('book_comments', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
             $table->integer('book_id')->unsigned()->nullable();

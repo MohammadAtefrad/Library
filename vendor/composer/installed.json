@@ -113,17 +113,17 @@
     },
     {
         "name": "backpack/crud",
-        "version": "3.5.9",
-        "version_normalized": "3.5.9.0",
+        "version": "3.5.10",
+        "version_normalized": "3.5.10.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Laravel-Backpack/CRUD.git",
-            "reference": "4f6de8033d45c1c79c1bef9d49b2c019290d6a44"
+            "reference": "e9020d230f0058be5f6c2c116598da16170adb5c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/4f6de8033d45c1c79c1bef9d49b2c019290d6a44",
-            "reference": "4f6de8033d45c1c79c1bef9d49b2c019290d6a44",
+            "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/e9020d230f0058be5f6c2c116598da16170adb5c",
+            "reference": "e9020d230f0058be5f6c2c116598da16170adb5c",
             "shasum": ""
         },
         "require": {
@@ -135,12 +135,12 @@
         },
         "require-dev": {
             "orchestra/database": "~3.4",
-            "orchestra/testbench": "~3.0",
-            "phpunit/phpunit": "~6.0",
+            "orchestra/testbench": "^3.0",
+            "phpunit/phpunit": "~7.0",
             "scrutinizer/ocular": "~1.1",
             "spatie/laravel-translatable": "^2.1"
         },
-        "time": "2018-11-28T12:45:19+00:00",
+        "time": "2018-12-05T06:11:56+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -779,17 +779,17 @@
     },
     {
         "name": "doctrine/dbal",
-        "version": "v2.8.0",
-        "version_normalized": "2.8.0.0",
+        "version": "v2.9.0",
+        "version_normalized": "2.9.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/dbal.git",
-            "reference": "5140a64c08b4b607b9bedaae0cedd26f04a0e621"
+            "reference": "21fdabe2fc01e004e1966f200d900554876bc63c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/dbal/zipball/5140a64c08b4b607b9bedaae0cedd26f04a0e621",
-            "reference": "5140a64c08b4b607b9bedaae0cedd26f04a0e621",
+            "url": "https://api.github.com/repos/doctrine/dbal/zipball/21fdabe2fc01e004e1966f200d900554876bc63c",
+            "reference": "21fdabe2fc01e004e1966f200d900554876bc63c",
             "shasum": ""
         },
         "require": {
@@ -799,32 +799,31 @@
             "php": "^7.1"
         },
         "require-dev": {
-            "doctrine/coding-standard": "^4.0",
+            "doctrine/coding-standard": "^5.0",
             "jetbrains/phpstorm-stubs": "^2018.1.2",
             "phpstan/phpstan": "^0.10.1",
-            "phpunit/phpunit": "^7.1.2",
-            "phpunit/phpunit-mock-objects": "!=3.2.4,!=3.2.5",
+            "phpunit/phpunit": "^7.4",
             "symfony/console": "^2.0.5|^3.0|^4.0",
             "symfony/phpunit-bridge": "^3.4.5|^4.0.5"
         },
         "suggest": {
             "symfony/console": "For helpful console commands such as SQL execution and import of files."
         },
-        "time": "2018-07-13T03:16:35+00:00",
+        "time": "2018-12-04T04:39:48+00:00",
         "bin": [
             "bin/doctrine-dbal"
         ],
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.8.x-dev",
+                "dev-master": "2.9.x-dev",
                 "dev-develop": "3.0.x-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Doctrine\\DBAL\\": "lib/"
+            "psr-4": {
+                "Doctrine\\DBAL\\": "lib/Doctrine/DBAL"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -849,12 +848,16 @@
                 "email": "jonwage@gmail.com"
             }
         ],
-        "description": "Database Abstraction Layer",
-        "homepage": "http://www.doctrine-project.org",
+        "description": "Powerful PHP database abstraction layer (DBAL) with many features for database schema introspection and management.",
+        "homepage": "https://www.doctrine-project.org/projects/dbal.html",
         "keywords": [
+            "abstraction",
             "database",
             "dbal",
+            "mysql",
             "persistence",
+            "pgsql",
+            "php",
             "queryobject"
         ]
     },
@@ -1168,17 +1171,17 @@
     },
     {
         "name": "egulias/email-validator",
-        "version": "2.1.6",
-        "version_normalized": "2.1.6.0",
+        "version": "2.1.7",
+        "version_normalized": "2.1.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/egulias/EmailValidator.git",
-            "reference": "0578b32b30b22de3e8664f797cf846fc9246f786"
+            "reference": "709f21f92707308cdf8f9bcfa1af4cb26586521e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
-            "reference": "0578b32b30b22de3e8664f797cf846fc9246f786",
+            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/709f21f92707308cdf8f9bcfa1af4cb26586521e",
+            "reference": "709f21f92707308cdf8f9bcfa1af4cb26586521e",
             "shasum": ""
         },
         "require": {
@@ -1193,7 +1196,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2018-09-25T20:47:26+00:00",
+        "time": "2018-12-04T22:38:24+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2016,7 +2019,7 @@
                 ]
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Laracasts\\Generators\\": "src/"

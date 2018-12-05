@@ -16,7 +16,7 @@ class CreatePostStatusesTable extends Migration
         Schema::create('post_statuses', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->string('post_status');
+            $table->string('post_status')->nullable();
             $table->timestamps();
         });
     }

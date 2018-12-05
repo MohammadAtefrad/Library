@@ -16,7 +16,7 @@ class CreateFactorStatusesTable extends Migration
         Schema::create('factor_statuses', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->string('factor_status');
+            $table->string('factor_status')->nullable();
             $table->timestamps();
         });
     }

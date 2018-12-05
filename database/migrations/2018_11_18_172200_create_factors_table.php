@@ -18,7 +18,7 @@ class CreateFactorsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('books_number');
+            $table->integer('books_number')->nullable();
             $table->integer('factor_status_id')->unsigned()->nullable();
             $table->foreign('factor_status_id')->references('id')->on('factor_statuses')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();

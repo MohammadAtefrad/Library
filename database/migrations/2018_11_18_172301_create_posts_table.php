@@ -16,12 +16,12 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->string('title', 255);
+            $table->string('title', 255)->nullable();
             $table->longText('body')->nullable();
             $table->integer('post_category_id')->unsigned()->nullable();
             $table->foreign('post_category_id')->references('id')->on('post_categories')->onDelete('set null')->onUpdate('cascade');
             $table->string('author')->nullable();
-            $table->date('published_date');
+            $table->date('published_date')->nullable();
             $table->integer('post_status_id')->unsigned()->nullable();
             $table->foreign('post_status_id')->references('id')->on('post_statuses')->onDelete('set null')->onUpdate('cascade');
             $table->integer('user_id')->unsigned()->nullable();

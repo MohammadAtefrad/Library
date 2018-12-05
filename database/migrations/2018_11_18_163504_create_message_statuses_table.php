@@ -15,7 +15,7 @@ class CreateMessageStatusesTable extends Migration {
 		Schema::create('message_statuses', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('message_status');
+            $table->string('message_status')->nullable();
             $table->timestamps();
 		});
 	}

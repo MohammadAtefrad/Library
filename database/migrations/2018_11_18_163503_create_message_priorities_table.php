@@ -15,7 +15,7 @@ class CreateMessagePrioritiesTable extends Migration {
 		Schema::create('message_priorities', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('message_priority');
+            $table->string('message_priority')->nullable();
             $table->timestamps();
 		});
 	}

@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property int $user_id
@@ -18,6 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Factor extends Model
 {
+    use CrudTrait;
+    
     /**
      * @var array
      */
@@ -40,11 +44,11 @@ class Factor extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function bookFactors()
+    public function books()
     {
-        return $this->hasMany('App\BookFactor');
+        return $this->belongsToMany('App\Book');
     }
 
     /**

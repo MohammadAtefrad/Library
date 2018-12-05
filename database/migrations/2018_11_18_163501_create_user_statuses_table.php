@@ -15,7 +15,7 @@ class CreateUserStatusesTable extends Migration
     {
         Schema::create('user_statuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_status');
+            $table->string('user_status')->nullable();
             $table->timestamps();
         });
     }

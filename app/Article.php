@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Backpack\CRUD\CrudTrait;
+
 /**
  * @property int $id
  * @property int $article_category_id
@@ -23,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Article extends Model
 {
+    use CrudTrait;
+
     /**
      * @var array
      */
