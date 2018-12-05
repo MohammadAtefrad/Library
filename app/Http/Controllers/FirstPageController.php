@@ -10,7 +10,7 @@ class FirstPageController extends Controller
 {
     public function index()
     {
-        $books = Book::with('bookCategory')->get();
+        $books = Book::with('bookCategory')->latest()->paginate(4);
         // dd ($books);
         return view('firstpage.index', compact('books'));
     }

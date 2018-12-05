@@ -1,30 +1,35 @@
 @extends('layoutmain')
 @section('content')
+
 <!-- books -->
 <section id="blog" class="padd-section wow fadeInUp text-right">
-    <div class="container">
-      <div class="section-title text-center">
-        <h2>آخرین کتاب ها</h2>
-        <p class="separator">آخرین کتاب هایی که به سایت اضافه شده است</p>
-      </div>
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>آخرین کتاب ها</h2>
+      <p class="separator">آخرین کتاب هایی که به سایت اضافه شده است</p>
     </div>
-    <div class="container-fluid ">
-        <div class="row ">
-            @foreach ($books as $book)
-            <div class="col-md-6 col-lg-3 pb-4">
-              <div class="block-blog shadow">
-                <a href="#"><img src="/img/blog/book.jpg" alt="img"></a>
-                <div class="content-blog">
-                  <h3 class="text-center"><a href="#">{{ $book->name }}</a></h3>
-                  <p>دسته بندی : <span class="font-weight-bold">{{ $book->bookCategory['book_category'] }}</span></p>
-                  <p>نویسنده : <span class="font-weight-bold">{{ $book->author }}</span></p>
-                  <span>05, juin 2017</span>
-                  <a class="pull-right readmore" href="#">بیشتر بخوانیم <i class="fas fa-book"></i></a>
-                </div>
-              </div>
+  </div>
+  <div class="container-fluid ">
+    <div class="row ">
+        @foreach ($books as $book)
+        <div class="col-md-6 col-lg-3 pb-4">
+          <div class="block-blog shadow">
+            <a href="#"><img src="/img/blog/book.jpg" alt="img"></a>
+            <div class="content-blog">
+              <h3 class="text-center"><a href="#">{{ $book->name }}</a></h3>
+              <p>دسته بندی : <span class="font-weight-bold">{{ $book->bookCategory['book_category'] }}</span></p>
+              <p>نویسنده : <span class="font-weight-bold">{{ $book->author }}</span></p>
+              <span>05, juin 2017</span>
+              <a class="pull-right readmore" href="#">بیشتر بخوانیم <i class="fas fa-book"></i></a>
             </div>
-            @endforeach
+          </div>
         </div>
+        @endforeach
+    </div>
+    <!-- Pager -->
+    <div style="text-align:center;">
+      {{$books->render()}}
+    </div><!-- End main -->
 
       {{-- <div class="row">
         <div class="col-md-6 col-lg-4 pb-2">
@@ -39,8 +44,8 @@
         </div> --}}
       </div>
     </div>
-  </section>
-  <!-- / end of books -->
+  </section><!-- / end of books -->
+  
   <!--article-->
   <section id="get-started" class="padd-section text-center wow fadeInUp">
 

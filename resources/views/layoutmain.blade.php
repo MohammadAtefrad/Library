@@ -71,7 +71,7 @@
     </header><!-- #header -->
 
     <div class="d-flex position-relative text-center justify-content-center align-items-center shadow">
-        <img class=" rounded" src="/img/newsletter-bg.jpg" style="">
+        <img class="img-fluid rounded" src="/img/newsletter-bg.jpg" style="">
         <div class="position-absolute text-white">
 
             {{-- search box --}}
