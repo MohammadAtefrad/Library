@@ -33,51 +33,51 @@ class ArticleController extends Controller
         //
     }
 
-    public function add_article()
-    {
-        return view('article.add');
-    }
+    // public function add_article()
+    // {
+    //     return view('article.add');
+    // }
 
-    public function store_article()
-    {
-        // ------------------validation type 1--------------------------
-        // $this->validate(request(), [
-        //     'title' => 'required',
-        //     'body' => 'required|min:10',
+    // public function store_article()
+    // {
+    //     // ------------------validation type 1--------------------------
+    //     // $this->validate(request(), [
+    //     //     'title' => 'required',
+    //     //     'body' => 'required|min:10',
 
-        // ]);
-        // ------------------validation type 2 (better my opinion)------
-        $validator = Validator::make(request()->all(), [
-            'title' => 'required',
-            'body' => 'required|min:10',
-        ]);
-        if ($validator->fails()) {
-            return (redirect()->back()->withErrors($validator)->withInput());
-        }
-        auth()->user()->articles()->create(request(['title','body']));
-        session()->flash('message' , 'مقاله شما با موفقیت ارسال شد');
-        return redirect('/');
-    }
+    //     // ]);
+    //     // ------------------validation type 2 (better my opinion)------
+    //     $validator = Validator::make(request()->all(), [
+    //         'title' => 'required',
+    //         'body' => 'required|min:10',
+    //     ]);
+    //     if ($validator->fails()) {
+    //         return (redirect()->back()->withErrors($validator)->withInput());
+    //     }
+    //     auth()->user()->articles()->create(request(['title','body']));
+    //     session()->flash('message' , 'مقاله شما با موفقیت ارسال شد');
+    //     return redirect('/');
+    // }
 
-    public function edit_article(Article $article)
-    {
-        $categories = ArticleCategory::all()->pluck('name' , 'id');
-        return view('article.edit' , compact('article' , 'categories'));
-    }
+    // public function edit_article(Article $article)
+    // {
+    //     $categories = ArticleCategory::all()->pluck('name' , 'id');
+    //     return view('article.edit' , compact('article' , 'categories'));
+    // }
 
-    public function update_article(Article $article)
-    {
-        $article->update(request(['title' , 'body']));
+    // public function update_article(Article $article)
+    // {
+    //     $article->update(request(['title' , 'body']));
 
-        $article->categories()->sync(request('category'));
+    //     $article->categories()->sync(request('category'));
 
-        return redirect('/');
-    }
+    //     return redirect('/');
+    // }
 
-    public function delete_article()
-    {
-        //
-    }
+    // public function delete_article()
+    // {
+    //     //
+    // }
 
     public function search_article()
     {

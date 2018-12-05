@@ -29,21 +29,6 @@ class BookController extends Controller
         //
     }
 
-    public function add_book()
-    {
-        //
-    }
-
-    public function edit_book()
-    {
-        //
-    }
-
-    public function delete_book()
-    {
-        //
-    }
-
     public function search_book()
     {
         //

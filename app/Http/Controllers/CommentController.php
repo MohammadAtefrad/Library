@@ -16,12 +16,4 @@ class CommentController extends Controller
         ]);
         return back();
     }
-
-    public function edit_comment(){
-
-    }
-
-    public function delete_comment(){
-
-    }
 }
