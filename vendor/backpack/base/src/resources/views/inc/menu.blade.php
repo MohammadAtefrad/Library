@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="navbar-custom-menu pull-right">
+<div class="navbar-custom-menu pull-left">
     <ul class="nav navbar-nav">
         <!-- ========================================================= -->
         <!-- ========= Top menu right items (ordered right) ========== -->
