@@ -6,7 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 //important for database:
 use Illuminate\Support\Facades\Schema;
-use App\Book;
+use App\BookCategory;
+use App\ArticleCategory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,10 +21,15 @@ class AppServiceProvider extends ServiceProvider
         //important for database:
         Schema::defaultStringLength(191);
         // book sidebar
-        // view()->composer('book.booksidebar' , function($view){
-        //     $categories = Book::with('bookCategory')->get();
-        //     $view->with(compact('categories'));
-        // });
+        view()->composer('book.sidebar' , function($view){
+            $categories = BookCategory::pluck('book_category');
+            $view->with(compact('categories'));            
+        });
+        // article sidebar
+        view()->composer('article.sidebar' , function($view){
+            $categories = ArticleCategory::pluck('article_category');
+            $view->with(compact('categories'));
+        });
     }
 
     /**

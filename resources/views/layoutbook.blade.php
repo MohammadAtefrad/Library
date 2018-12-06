@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>پروفایل کاربری</title>
+    <title>کتاب ها</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -11,6 +11,7 @@
     <!-- Favicons -->
     <link href="/img/favicon.png" rel="icon">
     <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
@@ -24,6 +25,10 @@
     <link href="/lib/modal-video/css/modal-video.min.css" rel="stylesheet">
     <!-- Main Stylesheet File -->
     <link href="/css/style.css" rel="stylesheet">
+
+    <!-- serch box style files -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
 
     <!-- Bootstrap css -->
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -65,26 +70,47 @@
         </div>
     </header><!-- #header -->
 
+    <div class="d-flex position-relative text-center justify-content-center align-items-center shadow">
+        <img class="img-fluid rounded" src="/img/newsletter-bg.jpg" style="">
+        <div class="position-absolute text-white">
+
+            {{-- search box --}}
+            <div class="row col-10 col-md-8 mx-auto s003 mb-5">
+                <h1>به کتابخانه ... خوش آمدید</h1>
+                <form class="bg-white rounded mt-4">
+                    <div class="inner-form">
+                        <div class="input-field first-wrap">
+                            <div class="input-select">
+                                <select data-trigger="" name="choices-single-defaul">
+                                    <option placeholder="">Category</option>
+                                    <option>New Arrivals</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field second-wrap">
+                            <input id="search" type="text" placeholder="Enter Keywords" />
+                        </div>
+                        <div class="input-field third-wrap">
+                            <button class="btn-search rounded" type="button">جستجو</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{-- end search box --}}
+
+        </div>
+    </div>
     {{-- content --}}
     <section id="blog" class="padd-section wow fadeInUp">
         <div class="container-fluid">
-            <div class="row mt-5">
+            <div class="row">
                 <!-- main -->
-                <div class="col-8 col-md-9 text-right">
-                    <div class="d-flex flex-column">
-                        @yield('content')
-                    </div>
-                </div>
+                @yield('content')
+                <!-- End main -->
+            
                 <!-- Sidebar -->
-                <div class="col-4 col-md-3 border-left border top text-right">
-                    <h3 class="my-4">پروفایل کاربری</h3>
-                    <div class="d-flex flex-column  mb-3" style="background: #71c55d;color:black">
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>کتاب ها و مقالات من</h5></a></div>
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>فاکتورها</h5></a></div>
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>کامنت های من</h5></a></div>
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>پیام ها</h5></a></div>
-                    </div>
-                </div>
+                @include('book.sidebar')
+                <!-- End sidebar -->
             </div>
         </div>
     </section>
@@ -93,6 +119,7 @@
     <section id="newsletter" class="newsletter text-center wow fadeInUp">
         <div class="overlay padd-section">
             <div class="container">
+
                 <div class="row justify-content-center">
                     <div class="col-md-9 col-lg-6">
                         <form class="form-inline" method="POST" action="#">
@@ -101,6 +128,7 @@
                         </form>
                     </div>
                 </div>
+
                 <ul class="list-unstyled">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -110,31 +138,40 @@
             </div>
         </div>
     </section>
-    <!-- Contact Section -->
+    <!--==========================
+    Contact Section
+  ============================-->
     <section id="contact" class="padd-section wow fadeInUp">
+
         <div class="container">
             <div class="section-title text-center">
                 <h2>Contact</h2>
                 <p class="separator">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
             </div>
         </div>
+
         <div class="container">
             <div class="row justify-content-center">
+
                 <div class="col-lg-3 col-md-4">
+
                     <div class="info">
                         <div>
                             <i class="fa fa-map-marker"></i>
                             <p>A108 Adam Street<br>New York, NY 535022</p>
                         </div>
+
                         <div class="email">
                             <i class="fa fa-envelope"></i>
                             <p>info@example.com</p>
                         </div>
+
                         <div>
                             <i class="fa fa-phone"></i>
                             <p>+1 5589 55488 55s</p>
                         </div>
                     </div>
+
                     <div class="social-links">
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -142,7 +179,9 @@
                         <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
                         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                     </div>
+
                 </div>
+
                 <div class="col-lg-5 col-md-8">
                     <div class="form">
                         <div id="sendmessage">Your message has been sent. Thank you!</div>
@@ -176,7 +215,9 @@
         </div>
     </section><!-- #contact -->
 
-    <!-- Footer -->
+    <!--==========================
+    Footer
+  ============================-->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -234,6 +275,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -262,6 +304,13 @@
     <script src="/js/main.js"></script>
     <!-- search box -->
     <script src="/js/extention/choices.js"></script>
+    <script>
+        const choices = new Choices('[data-trigger]', {
+            searchEnabled: false,
+            itemSelectText: '',
+        });
+
+    </script>
 </body>
 
 </html>

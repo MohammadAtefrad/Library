@@ -9,13 +9,13 @@ class BookController extends Controller
 {
     public function all_books()
     {
-        //
+        $books = Book::with('bookCategory')->with('bookStatus')->latest()->paginate(10);
+        return view('book.index', compact('books'));
     }
 
     public function one_book(Book $book)
     {
         $comments = $book->bookComments()->get();
-        $book=Book::find(1);
         return view('book.onebook', compact('book' , 'comments'));
     }
 

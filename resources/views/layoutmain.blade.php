@@ -53,9 +53,9 @@
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#hero">خانه</a></li>
                     <li><a href="#about-us">درباره ما</a></li>
-                    <li><a href="#features">کتاب ها</a></li>
-                    <li><a href="#screenshots">مقالات</a></li>
-                    <li><a href="#team">اخبار</a></li>
+                    <li><a href="{{ route('book.allbooks') }}">کتاب ها</a></li>
+                    <li><a href="{{ route('article.allarticles') }}">مقالات</a></li>
+                    <li><a href="{{ route('post.allposts') }}">اخبار</a></li>
                     <li class="menu-has-children"><a href="">Drop Down</a>
                         <ul>
                             <li><a href="#">Drop Down 1</a></li>

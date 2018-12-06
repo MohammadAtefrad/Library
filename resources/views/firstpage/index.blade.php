@@ -5,7 +5,7 @@
 <section id="blog" class="padd-section wow fadeInUp text-right">
   <div class="container">
     <div class="section-title text-center">
-      <h2>آخرین کتاب ها</h2>
+        <a href="{{ route('book.allbooks') }}"><h2>آخرین کتاب ها</h2></a>
       <p class="separator">آخرین کتاب هایی که به سایت اضافه شده است</p>
     </div>
   </div>
@@ -51,7 +51,7 @@
 
       <div class="container">
         <div class="section-title text-center">
-          <h2>اخرین اخبار </h2>
+          <a href="{{ route('post.allposts') }}"><h2>اخرین اخبار </h2></a>
           <p class="separator">اخرین اخبار و اطلاعیه های ... را در این قسمت مشاهده کنید</p>
         </div>
       </div>
@@ -61,34 +61,28 @@
 
           <div class="col-md-6 col-lg-4">
             <div class="feature-block">
-
               <img src="/img/svg/cloud.svg" alt="img" class="img-fluid">
               <h4>introducing whatsapp</h4>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <a href="#">read more</a>
-
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4">
             <div class="feature-block">
-
               <img src="/img/svg/planet.svg" alt="img" class="img-fluid">
               <h4>user friendly interface</h4>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <a href="#">read more</a>
-
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4">
             <div class="feature-block">
-
               <img src="/img/svg/asteroid.svg" alt="img" class="img-fluid">
               <h4>build the app everyone love</h4>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
               <a href="#">read more</a>
-
             </div>
           </div>
         </div>
@@ -100,7 +94,7 @@
 
       <div class="container">
         <div class="section-title text-center">
-          <h2>مقالات</h2>
+          <a href="{{ route('article.allarticles') }}"><h2>مقالات</h2></a>
           <p class="separator">اخرن مقالات را در این قسمت مشاهده کنید</p>
         </div>
       </div>
