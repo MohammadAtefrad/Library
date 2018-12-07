@@ -8,6 +8,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\BookCategory;
 use App\ArticleCategory;
+use App\Article;
+use App\Book;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,21 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('article.sidebar' , function($view){
             $categories = ArticleCategory::pluck('article_category');
             $view->with(compact('categories'));
+        });
+        // user sidebar
+        view()->composer('user.sidebar' , function($view){
+            
+            $view->with(compact('books' , 'articles' , 'factors' , 'comments' , 'massages'));
+        });
+        // post left sidebar
+        view()->composer('post.leftsidebar' , function($view){
+            $articles = Article::latest()->take(5)->get();
+            $view->with(compact('articles'));
+        });
+        // post right sidebar
+        view()->composer('post.rightsidebar' , function($view){
+            $books = Book::latest()->take(5)->get();
+            $view->with(compact('books'));
         });
     }
 

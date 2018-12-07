@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>کتاب ها</title>
+    <title>اخبار</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -104,12 +104,16 @@
     <section id="blog" class="padd-section wow fadeInUp">
         <div class="container-fluid">
             <div class="row">
+                <!-- left Sidebar -->
+                @include('post.leftsidebar')
+                <!-- End sidebar -->
+                
                 <!-- main -->
                 @yield('content')
                 <!-- End main -->
             
-                <!-- Sidebar -->
-                @include('book.sidebar')
+                <!-- right Sidebar -->
+                @include('post.rightsidebar')
                 <!-- End sidebar -->
             </div>
         </div>

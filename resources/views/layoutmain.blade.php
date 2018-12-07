@@ -51,7 +51,7 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#hero">خانه</a></li>
+                    <li class="menu-active"><a href="{{ route('firstpage.index') }}">خانه</a></li>
                     <li><a href="#about-us">درباره ما</a></li>
                     <li><a href="{{ route('book.allbooks') }}">کتاب ها</a></li>
                     <li><a href="{{ route('article.allarticles') }}">مقالات</a></li>
@@ -75,14 +75,14 @@
         <div class="position-absolute text-white">
 
             {{-- search box --}}
-            <div class="row col-10 col-md-8 mx-auto s003">
+            <div class="row col-10 col-md-8 mx-auto s003 mb-5">
                 <h1>به کتابخانه ... خوش آمدید</h1>
                 <form class="bg-white rounded mt-4">
                     <div class="inner-form">
                         <div class="input-field first-wrap">
                             <div class="input-select">
                                 <select data-trigger="" name="choices-single-defaul">
-                                    <option placeholder="">Category</option>
+                                    <option placeholder="123135">Category</option>
                                     <option>New Arrivals</option>
                                 </select>
                             </div>

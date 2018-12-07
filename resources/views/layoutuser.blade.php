@@ -46,7 +46,7 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#hero">خانه</a></li>
+                    <li class="menu-active"><a href="{{ route('firstpage.index') }}">خانه</a></li>
                     <li><a href="#about-us">درباره ما</a></li>
                     <li><a href="{{ route('book.allbooks') }}">کتاب ها</a></li>
                     <li><a href="{{ route('article.allarticles') }}">مقالات</a></li>
@@ -76,15 +76,8 @@
                     </div>
                 </div>
                 <!-- Sidebar -->
-                <div class="col-4 col-md-3 border-left border top text-right">
-                    <h3 class="my-4">پروفایل کاربری</h3>
-                    <div class="d-flex flex-column  mb-3" style="background: #71c55d;color:black">
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>کتاب ها و مقالات من</h5></a></div>
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>فاکتورها</h5></a></div>
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>کامنت های من</h5></a></div>
-                        <div class="p-3 "><span class="badge badge-pill badge-warning float-left mt-2">Warning</span><a href="#" class="btn border-0"><h5>پیام ها</h5></a></div>
-                    </div>
-                </div>
+                @include('user.sidebar')
+                <!-- End sidebar -->
             </div>
         </div>
     </section>

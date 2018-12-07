@@ -51,7 +51,7 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#hero">خانه</a></li>
+                    <li class="menu-active"><a href="{{ route('firstpage.index') }}">خانه</a></li>
                     <li><a href="#about-us">درباره ما</a></li>
                     <li><a href="{{ route('book.allbooks') }}">کتاب ها</a></li>
                     <li><a href="{{ route('article.allarticles') }}">مقالات</a></li>

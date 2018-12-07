@@ -12,9 +12,9 @@ class FirstPageController extends Controller
 {
     public function index()
     {
-        $books = Book::with('bookCategory')->latest()->paginate(8);
-        $articles = Article::with('articleCategory')->latest()->paginate(6);
-        $posts = Post::with('postCategory')->latest()->paginate(3);
+        $books = Book::latest()->paginate(8);
+        $articles = Article::latest()->paginate(6);
+        $posts = Post::latest()->paginate(3);
         return view('firstpage.index', compact('books','articles','posts'));
     }
 

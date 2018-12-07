@@ -14,22 +14,21 @@
         @foreach ($books as $book)
         <div class="col-md-6 col-lg-3 pb-4">
           <div class="block-blog shadow">
-            <a href="#"><img src="/img/blog/book.jpg" alt="img"></a>
+            <a href="{{ route('book.onebook' , ['book' => $book->id]) }}"><img src="/img/blog/book.jpg" alt="img"></a>
             <div class="content-blog">
-              <h3 class="text-center"><a href="#">{{ $book->name }}</a></h3>
+              <a href="{{ route('book.onebook' , ['book' => $book->id]) }}"><h4>{{ $book->name }}</h4></a>
               <p>دسته بندی : <span class="font-weight-bold">{{ $book->bookCategory['book_category'] }}</span></p>
               <p>نویسنده : <span class="font-weight-bold">{{ $book->author }}</span></p>
-              <span>05, juin 2017</span>
-              <a class="pull-right readmore" href="#">بیشتر بخوانیم <i class="fas fa-book"></i></a>
+              <span class="text-right">تاریخ انتشار : {{ jdate($book->published_date)->format('%d %B %Y') }}</span>
+              <a class="pull-right readmore" href="{{ route('book.onebook' , ['book' => $book->id]) }}">بیشتر بخوانیم <i class="fas fa-book"></i></a>
             </div>
           </div>
         </div>
         @endforeach
     </div>
     <!-- Pager -->
-    <div style="text-align:center;">
-      {{$books->render()}}
-    </div><!-- End main -->
+    <div style="text-align:center;">{{$books->render()}}</div>
+    <!-- End books -->
 
       {{-- <div class="row">
         <div class="col-md-6 col-lg-4 pb-2">
@@ -49,124 +48,62 @@
   <!--article-->
   <section id="get-started" class="padd-section text-center wow fadeInUp">
 
-      <div class="container">
-        <div class="section-title text-center">
-          <a href="{{ route('post.allposts') }}"><h2>اخرین اخبار </h2></a>
-          <p class="separator">اخرین اخبار و اطلاعیه های ... را در این قسمت مشاهده کنید</p>
-        </div>
+    <div class="container">
+      <div class="section-title text-center">
+        <a href="{{ route('post.allposts') }}"><h2>اخرین اخبار </h2></a>
+        <p class="separator">اخرین اخبار و اطلاعیه های ... را در این قسمت مشاهده کنید</p>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="row">
+    <div class="container">
+      <div class="row">
 
-          <div class="col-md-6 col-lg-4">
-            <div class="feature-block">
-              <img src="/img/svg/cloud.svg" alt="img" class="img-fluid">
-              <h4>introducing whatsapp</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-              <a href="#">read more</a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="feature-block">
-              <img src="/img/svg/planet.svg" alt="img" class="img-fluid">
-              <h4>user friendly interface</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-              <a href="#">read more</a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="feature-block">
-              <img src="/img/svg/asteroid.svg" alt="img" class="img-fluid">
-              <h4>build the app everyone love</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-              <a href="#">read more</a>
-            </div>
+        @foreach ($posts as $post)
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-block">
+            <a href="{{ route('post.onepost' , ['post' => $post->id]) }}"><img src="/img/svg/cloud.svg" alt="img" class="img-fluid"></a>
+            <a href="{{ route('post.onepost' , ['post' => $post->id]) }}"><h4>{{ $post->title }}</h4></a>
+            <p class="" style="font-size: 0.8rem; max-height: 150px;overflow: hidden;">{{ $post->body }}</p>
+            <a href="{{ route('post.onepost' , ['post' => $post->id]) }}">ادامه</a>
           </div>
         </div>
-      </div>
+        @endforeach
 
+      </div>
+      <!-- Pager -->
+      <div style="text-align:center;">{{$posts->render()}}</div>
+    </div>
   </section>
-  <!--post-->
+
+  <!--article-->
   <section id="features" class="padd-section text-center wow fadeInUp">
 
       <div class="container">
         <div class="section-title text-center">
           <a href="{{ route('article.allarticles') }}"><h2>مقالات</h2></a>
-          <p class="separator">اخرن مقالات را در این قسمت مشاهده کنید</p>
+          <p class="separator">اخرین مقالات را در این قسمت مشاهده کنید</p>
         </div>
       </div>
 
       <div class="container">
         <div class="row">
 
+          @foreach ($articles as $article)
           <div class="col-md-6 col-lg-3">
             <div class="feature-block">
-              <img src="/img/svg/paint-palette.svg" alt="img" class="img-fluid">
-              <h4>creative design</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="{{ route('article.onearticle' , ['article' => $article->id]) }}"><img src="/img/svg/paint-palette.svg" alt="img" class="img-fluid"></a>
+              <a href="{{ route('article.onearticle' , ['article' => $article->id]) }}"><h4>{{ $article->title }}</h4></a>
+              <p class="font-weight-bold">نویسنده : {{ $article->author }}</p>
+              <p class="font-weight-bold">دسته بندی : {{ $article->articleCategory->article_category }}</p>
+              <p class="font-weight-bold">تاریخ انتشار : {{ jdate($article->published_date)->format('%d %B %Y') }}</p>  
+              <a class="btn btn-success btn-lg" href="{{ route('article.onearticle' , ['article' => $article->id]) }}" role="button">مشاهده مقاله</a>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/vector.svg" alt="img" class="img-fluid">
-              <h4>Retina Ready</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/design-tool.svg" alt="img" class="img-fluid">
-              <h4>easy to use</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/asteroid.svg" alt="img" class="img-fluid">
-              <h4>Free Updates</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/asteroid.svg" alt="img" class="img-fluid">
-              <h4>Free Updates</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/cloud-computing.svg" alt="img" class="img-fluid">
-              <h4>App store support</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/pixel.svg" alt="img" class="img-fluid">
-              <h4>Perfect Pixel</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="feature-block">
-              <img src="/img/svg/code.svg" alt="img" class="img-fluid">
-              <h4>clean codes</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-            </div>
-          </div>
+          @endforeach
 
         </div>
+        <!-- Pager -->
+        <div style="text-align:center;">{{$articles->render()}}</div>
       </div>
   </section>
   @endsection

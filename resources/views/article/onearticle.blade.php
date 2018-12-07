@@ -8,7 +8,7 @@
                         <a href="#"><img class="float-left shadow" src="/img/blog/book.jpg" alt="img"></a>
                     </div>
                     <div class="col-12 col-md-6">
-                        <h1 class="display-5">{{ $article->name }}</h1>
+                        <h1 class="display-5">{{ $article->title }}</h1>
                         <p class="font-weight-bold">نویسنده : {{ $article->author }}</p>
                         <p class="font-weight-bold">دسته بندی : {{ $article->articleCategory->article_category }}</p>
                         <p class="font-weight-bold">تاریخ انتشار : {{ jdate($article->published_date)->format('%d %B %Y') }}</p>
