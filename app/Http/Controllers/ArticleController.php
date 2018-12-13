@@ -22,14 +22,16 @@ class ArticleController extends Controller
         return view('article.onearticle', compact('article' , 'comments'));
     }
 
-    public function articles_by_category()
+    public function articles_by_category(Request $request)
     {
-        //
+        $articles = article::with('articleCategory')->with('articleStatus')->where('article_category_id',$request['category'])->latest()->paginate(10);
+        return view('article.index' , compact('articles'));
     }
 
-    public function articles_by_alfabet()
+    public function articles_by_alfabet(Request $request)
     {
-        //
+        $articles = article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['letter'].'%')->latest()->paginate(10);
+        return view('article.index' , compact('articles'));
     }
 
     // public function add_article()

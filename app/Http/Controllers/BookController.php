@@ -19,14 +19,16 @@ class BookController extends Controller
         return view('book.onebook', compact('book' , 'comments'));
     }
 
-    public function books_by_category()
+    public function books_by_category(Request $request)
     {
-        //
+        $books = book::with('bookCategory')->with('bookStatus')->where('book_category_id',$request['category'])->latest()->paginate(10);
+        return view('book.index' , compact('books'));
     }
 
-    public function books_by_alfabet()
+    public function books_by_alfabet(Request $request)
     {
-        //
+        $books = book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['letter'].'%')->latest()->paginate(10);
+        return view('book.index' , compact('books'));
     }
 
     public function search_book()

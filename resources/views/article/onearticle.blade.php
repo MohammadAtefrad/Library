@@ -41,13 +41,13 @@
             <hr>
             <!-- Posted Comments -->
             @foreach ($comments as $comment)
-            <div class="media">
+            <div class="media pb-4">
                 <div class="media-body">
-                    <h5 class="">
+                    <h6 class="">
                         <small>ارسال شده در تاریخ {{ jdate($comment->created_at)->format('%d %B، %Y') }}</small>
                         {{$comment->user->name}}
-                    </h5>
-                    {{$comment->body}}
+                    </h6>
+                    <p>{{$comment->body}}</p>
                 </div>
             </div>
             @endforeach

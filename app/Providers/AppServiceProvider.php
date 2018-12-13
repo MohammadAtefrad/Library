@@ -22,14 +22,15 @@ class AppServiceProvider extends ServiceProvider
     {
         //important for database:
         Schema::defaultStringLength(191);
+        
         // book sidebar
         view()->composer('book.sidebar' , function($view){
-            $categories = BookCategory::pluck('book_category');
+            $categories = BookCategory::all();
             $view->with(compact('categories'));            
         });
         // article sidebar
         view()->composer('article.sidebar' , function($view){
-            $categories = ArticleCategory::pluck('article_category');
+            $categories = ArticleCategory::all();
             $view->with(compact('categories'));
         });
         // user sidebar

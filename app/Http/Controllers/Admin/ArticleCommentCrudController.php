@@ -38,42 +38,42 @@ class ArticleCommentCrudController extends CrudController
         // TODO: remove setFromDb() and manually define Fields and Columns
         // $this->crud->setFromDb();
 
-        // ------ CRUD FIELDS
+        // ------------------editing fields-------------
         $this->crud->addField([
             'name' => 'body',
             'type' => 'text',
-            'label' => "Comment Text"
+            'label' => "متن پیام"
         ]);
         $this->crud->addField([
             'type' => 'select2',
             'name' => 'user_id',
-            'label' => 'From User',
             'entity' => 'user',
-            'attribute' => 'name',
+            'attribute' => 'name',            
+            'label' => 'از طرف',
         ]);
         $this->crud->addField([
             'type' => 'select2',
             'name' => 'article_id',
-            'label' => 'For Article',
             'entity' => 'article',
             'attribute' => 'title',
+            'label' => 'برای مقاله',
         ]);
         $this->crud->addField([
             'type' => 'select2',
             'name' => 'reference_comment_id',
-            'label' => 'Reply to',
             'entity' => 'parent',
             'attribute' => 'body',
+            'label' => 'در پاسخ',
         ]);
         $this->crud->addField([
             'type' => 'select2',
             'name' => 'comment_status_id',
-            'label' => 'Status',
             'entity' => 'commentStatus',
             'attribute' => 'comment_status',
+            'label' => 'وضعیت',
         ]);
 
-        // ------ CRUD COLUMNS
+        // ---------------- COLUMNS-----------------
         $this->crud->addColumn([
             'name' => 'id',
             'type' => 'number',
@@ -82,49 +82,49 @@ class ArticleCommentCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'body',
             'type' => 'text',
-            'label' => 'Comment Text',
+            'label' => 'متن پیام',
         ]);
         $this->crud->addColumn([
             'type' => 'select',
-            'label' => 'From User',
             'name' => 'user_id',
             'entity' => 'user', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
+            'label' => 'از طرف',
         ]);
         $this->crud->addColumn([
             'type' => 'select',
-            'label' => 'For Article',
             'name' => 'article_id',
             'entity' => 'article', // the method that defines the relationship in your Model
             'attribute' => 'title', // foreign key attribute that is shown to user
+            'label' => 'برای مقاله',
         ]);
         $this->crud->addColumn([
             'type' => 'text',
-            'label' => 'in Reply to',
             'name' => 'reference_comment_id',
             // 'entity' => 'article', // the method that defines the relationship in your Model
             // 'attribute' => 'title', // foreign key attribute that is shown to user
+            'label' => 'در پاسخ به پیام',
         ]);
         $this->crud->addColumn([
             'type' => 'select',
-            'label' => 'Status',
             'name' => 'comment_status_id',
             'entity' => 'commentStatus', // the method that defines the relationship in your Model
             'attribute' => 'comment_status', // foreign key attribute that is shown to user
+            'label' => 'وضعیت',
         ]);
         $this->crud->addColumn([
             'type' => 'datetime',
-            'label' => 'Created Time',
             'name' => 'created_at',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
+            'label' => 'تاریخ ایجاد',
         ]);
         $this->crud->addColumn([
             'type' => 'datetime',
-            'label' => 'Updated Time',
             'name' => 'updated_at',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
+            'label' => 'تاریخ ویرایش',
         ]);
 
 

@@ -82,8 +82,9 @@
                         <div class="input-field first-wrap">
                             <div class="input-select">
                                 <select data-trigger="" name="choices-single-defaul">
-                                    <option placeholder="">Category</option>
-                                    <option>New Arrivals</option>
+                                    <option value="books">کتاب ها</option>
+                                    <option value="articles">مقالات</option>
+                                    <option value="posts">اخبار</option>
                                 </select>
                             </div>
                         </div>

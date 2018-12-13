@@ -38,14 +38,14 @@ class ArticleCategoryCrudController extends CrudController
         // TODO: remove setFromDb() and manually define Fields and Columns
         // $this->crud->setFromDb();
 
-        // ------ CRUD FIELDS
+        // ------ edit page FIELDS
         $this->crud->addField([
             'type' => 'text',
             'name' => 'article_category',
-            'lable' => 'Article Category Name',
+            'lable' => 'دسته بندی',
         ]);
 
-        // ------ CRUD COLUMNS
+        // ----- COLUMNS
         $this->crud->addColumn([
             'name' => 'id',
             'type' => 'number',
@@ -54,21 +54,21 @@ class ArticleCategoryCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'article_category',
             'type' => 'text',
-            'label' => 'Article Category Name',
+            'label' => 'دسته بندی',
         ]);
         $this->crud->addColumn([
             'type' => 'datetime',
-            'label' => 'Created Time',
             'name' => 'created_at',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
+            'label' => 'تاریخ ارسال',
         ]);
         $this->crud->addColumn([
             'type' => 'datetime',
-            'label' => 'Updated Time',
             'name' => 'updated_at',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
+            'label' => 'تاریخ ویرایش',
         ]);
 
         // add asterisk for fields that are required in ArticleCategoryRequest
