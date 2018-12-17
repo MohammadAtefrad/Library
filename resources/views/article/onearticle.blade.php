@@ -26,7 +26,7 @@
                 @include('layouts.errors')
                 <h4>ارسال کامنت :</h4>
                 <hr>
-                <form role="form" method="POST" action="{{ route('comment.add' , ['article'=>$article->slug]) }}">
+                <form role="form" method="POST" action="{{ route('articlecomment.add' , ['article'=>$article->id]) }}">
                     {{ csrf_field() }}
                     <label for="body">متن :</label>
                     <div class="form-group">

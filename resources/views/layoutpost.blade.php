@@ -56,15 +56,22 @@
                     <li><a href="{{ route('book.allbooks') }}">کتاب ها</a></li>
                     <li><a href="{{ route('article.allarticles') }}">مقالات</a></li>
                     <li><a href="{{ route('post.allposts') }}">اخبار</a></li>
-                    <li class="menu-has-children"><a href="">Drop Down</a>
+                    <li><a href="#contact">ارتباط با ما</a></li>
+                    @if (auth::check())
+                    <li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                            <li><a href="#">Drop Down 5</a></li>
+                            <li><a class="btn btn-xs" href="{{ route('user.index') }}">پروفایل کاربری</a></li>
+                            <li>
+                                <form action="{{route('logout')}}" method="post">
+                                    {{ csrf_field() }}
+                                    <button class="col-12 btn btn-xs btn-warning">خروج</button>
+                                </form>
+                            </li>
                         </ul>
                     </li>
-                    <li><a href="#contact">ارتباط با ما</a></li>
+                    @else
+                        <li><a href="/login">ورود</a></li>
+                    @endif
                 </ul>
             </nav>
         </div>

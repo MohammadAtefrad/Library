@@ -33,11 +33,44 @@ class UserCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
 
         // add asterisk for fields that are required in UserRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
+
+        // columns
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'number',
+            'label' => 'Id',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => 'نام',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'email',
+            'type' => 'email',
+            'label' => 'ایمیل',
+        ]);
+        $this->crud->addColumn([
+            'label' => "سطح", // Table column heading
+            'type' => "select",
+            'name' => 'role_id', // the column that contains the ID of that connected entity;
+            'entity' => 'role', // the method that defines the relationship in your Model
+            'attribute' => "role", // foreign key attribute that is shown to user
+            'model' => "App\User", // foreign key model
+        ]);
+        $this->crud->addColumn([
+            'label' => "وضعیت", // Table column heading
+            'type' => "select",
+            'name' => 'user_status_id', // the column that contains the ID of that connected entity;
+            'entity' => 'userstatus', // the method that defines the relationship in your Model
+            'attribute' => "user_status", // foreign key attribute that is shown to user
+            'model' => "App\User", // foreign key model
+        ]);
     }
 
     public function store(StoreRequest $request)

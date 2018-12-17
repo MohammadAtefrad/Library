@@ -30,6 +30,7 @@ Route::get('/book/search', ['as' => 'book.search', 'uses' => 'BookController@sea
 Route::get('/book/reserve', ['as' => 'book.reserve', 'uses' => 'BookController@reserve_book']);
 Route::get('/book/category/{category}', ['as' => 'category.books_by_category', 'uses' => 'BookController@books_by_category']);
 Route::get('/book/alfabet/{letter}', ['as' => 'category.books_by_alfabet', 'uses' => 'BookController@books_by_alfabet']);
+Route::post('/book/{book}/comment', ['as' => 'bookcomment.add', 'uses' => 'BookController@add_comment']);
 
 /**
  * article controller routes
@@ -42,6 +43,7 @@ Route::get('/article/search', ['as' => 'article.search', 'uses' => 'AarticleCont
 Route::get('/article/download', ['as' => 'article.download', 'uses' => 'ArticleController@download_article']);
 Route::get('/article/category/{category}', ['as' => 'category.articles_by_category', 'uses' => 'ArticleController@articles_by_category']);
 Route::get('/article/alfabet/{letter}', ['as' => 'category.articles_by_alfabet', 'uses' => 'ArticleController@articles_by_alfabet']);
+Route::post('/article/{article}/comment', ['as' => 'articlecomment.add', 'uses' => 'ArticleController@add_comment']);
 
 /**
  * post controller routes
@@ -50,8 +52,9 @@ Route::get('/post/allposts', ['as' => 'post.allposts', 'uses' => 'postController
 Route::get('/post/{post}', ['as' => 'post.onepost', 'uses' => 'postController@one_post']);
 Route::get('/post/bycategory', ['as' => 'post.category', 'uses' => 'postController@posts_by_category']);
 Route::get('/post/byalfabet', ['as' => 'post.alfabet', 'uses' => 'postController@posts_by_alfabet']);
-Route::get('/post/search', ['as' => 'post.search', 'uses' => 'ApostController@search_post']);
+Route::get('/post/search', ['as' => 'post.search', 'uses' => 'postController@search_post']);
 Route::get('/post/download', ['as' => 'post.download', 'uses' => 'postController@download_post']);
+Route::post('/post/{post}/comment', ['as' => 'postcomment.add', 'uses' => 'postController@add_comment']);
 
 /**
  * category controller routes
@@ -61,21 +64,24 @@ Route::get('/post/download', ['as' => 'post.download', 'uses' => 'postController
 /**
  * comment controller routes
  */
-Route::post('/comment/add', ['as' => 'comment.add', 'uses' => 'CommentController@add_comment']);
-// route::post('/article/{article}/comment',
-Route::get('/comment/edit', ['as' => 'comment.edit', 'uses' => 'CommentController@edit_comment']);
-Route::get('/comment/edit', ['as' => 'comment.edit', 'uses' => 'CommentController@delete_comment']);
+
 
 /**
  * user controller routes
  */
-Route::get('/user/index', ['as' => 'user.index', 'uses' => 'UserController@index']);
-Route::get('/user/{user}', ['as' => 'user.editprofile', 'uses' => 'UserController@edit_profile']);
-Route::post('/user', ['as' => 'user.updateprofile', 'uses' => 'UserController@update_profile']);
-Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
-Route::get('/user/{factor}', ['as' => 'user.factor', 'uses' => 'UserController@factor']);
-Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
-Route::get('/user/usersbookarticle', ['as' => 'user.bookarticle', 'uses' => 'UserController@users_book_article']);
-Route::get('/user/{comments}', ['as' => 'user.comments', 'uses' => 'UserController@comments']);
-Route::get('/user/{messages}', ['as' => 'user.messages', 'uses' => 'UserController@messages']);
-Route::get('/user/sendmessage', ['as' => 'user.sendmessage', 'uses' => 'UserController@send_message']);
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/user/index', ['as' => 'user.index', 'uses' => 'UserController@index']);
+    Route::get('/user/{user}', ['as' => 'user.editprofile', 'uses' => 'UserController@edit_profile']);
+    Route::post('/user', ['as' => 'user.updateprofile', 'uses' => 'UserController@update_profile']);
+    Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
+    Route::get('/user/{factor}', ['as' => 'user.factor', 'uses' => 'UserController@factor']);
+    Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
+    Route::get('/user/usersbookarticle', ['as' => 'user.bookarticle', 'uses' => 'UserController@users_book_article']);
+    Route::get('/user/{comments}', ['as' => 'user.comments', 'uses' => 'UserController@comments']);
+    Route::get('/user/{messages}', ['as' => 'user.messages', 'uses' => 'UserController@messages']);
+    Route::get('/user/sendmessage', ['as' => 'user.sendmessage', 'uses' => 'UserController@send_message']);
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

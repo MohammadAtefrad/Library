@@ -80,6 +80,19 @@ class ArticleController extends Controller
     //     //
     // }
 
+    public function add_comment(Article $article){
+        $this->validate(request(), [
+            'body' => 'required|min:5',
+        ]);
+        // return $article;
+        $article->articleComments()->create([
+            'user_id' => Auth()->user()->id,
+            'body' => request('body'),
+            'comment_status_id' => '2',
+        ]);
+        return back();
+    }
+
     public function search_article()
     {
         //
