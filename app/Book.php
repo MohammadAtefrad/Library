@@ -82,4 +82,9 @@ class Book extends Model
     {
         return $this->belongsToMany('App\User');
     }
+
+    public function users2()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

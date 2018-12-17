@@ -24,7 +24,7 @@ class BookCategoryCrudController extends CrudController
         */
         $this->crud->setModel('App\BookCategory');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/bookcategory');
-        $this->crud->setEntityNameStrings('bookcategory', 'book_categories');
+        $this->crud->setEntityNameStrings('دسته بندی کتاب', 'دسته بندی کتاب ها');
 
         /*
         |--------------------------------------------------------------------------
@@ -33,7 +33,41 @@ class BookCategoryCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+
+        // ------ CRUD FIELDS
+        $this->crud->addField([
+            'type' => 'text',
+            'name' => 'book_category',
+            'label' => 'نام دسته بندی کتاب',
+        ]);
+
+        // ------ CRUD COLUMNS
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'number',
+            'label' => 'شناسه',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'book_category',
+            'type' => 'text',
+            'label' => 'نام دسته بندی کتاب',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'type' => 'datetime',
+            'label' => 'زمان ایجاد',
+            // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
+            // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
+        ]);
+        $this->crud->addColumn([
+            'name' => 'updated_at',
+            'type' => 'datetime',
+            'label' => 'زمان آخرین تغییرات',
+            // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
+            // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
+        ]);
+
 
         // add asterisk for fields that are required in BookCategoryRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
@@ -43,11 +77,6 @@ class BookCategoryCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->create_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-        }
-
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
@@ -57,11 +86,6 @@ class BookCategoryCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->update_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-        }
-
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry

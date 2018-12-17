@@ -43,11 +43,6 @@ class CommentStatusCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->create_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-        }
-
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
@@ -57,11 +52,6 @@ class CommentStatusCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->update_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-        }
-
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry

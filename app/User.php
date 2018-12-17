@@ -134,4 +134,9 @@ class User extends Model implements AuthenticatableContract
     {
         return $this->hasMany('App\Post');
     }
+
+    public function books2()
+    {
+        return $this->hasMany('App\Book');
+    }
 }

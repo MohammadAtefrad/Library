@@ -20,7 +20,7 @@ use Backpack\CRUD\CrudTrait;
 class BookComment extends Model
 {
     use CrudTrait;
-    
+
     /**
      * @var array
      */
@@ -49,4 +49,16 @@ class BookComment extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    // Self Relation:
+    public function parent()
+    {
+        return $this->belongsTo('App\BookComment', 'reference_comment_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('App\BookComment', 'reference_comment_id');
+    }
+
 }

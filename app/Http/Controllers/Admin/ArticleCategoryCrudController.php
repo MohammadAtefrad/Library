@@ -24,7 +24,7 @@ class ArticleCategoryCrudController extends CrudController
         */
         $this->crud->setModel('App\ArticleCategory');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/articlecategory');
-        $this->crud->setEntityNameStrings('Article Category', 'article Categories');
+        $this->crud->setEntityNameStrings('گروه مقاله', 'دسته بندی مقالات');
 
         /*
         |--------------------------------------------------------------------------
@@ -38,37 +38,37 @@ class ArticleCategoryCrudController extends CrudController
         // TODO: remove setFromDb() and manually define Fields and Columns
         // $this->crud->setFromDb();
 
-        // ------ edit page FIELDS
+        // ------ CRUD FIELDS
         $this->crud->addField([
             'type' => 'text',
             'name' => 'article_category',
-            'lable' => 'دسته بندی',
+            'label' => 'نام دسته بندی مقاله',
         ]);
 
-        // ----- COLUMNS
+        // ------ CRUD COLUMNS
         $this->crud->addColumn([
             'name' => 'id',
             'type' => 'number',
-            'label' => 'Id',
+            'label' => 'شناسه',
         ]);
         $this->crud->addColumn([
             'name' => 'article_category',
             'type' => 'text',
-            'label' => 'دسته بندی',
+            'label' => 'نام دسته بندی مقاله',
         ]);
         $this->crud->addColumn([
-            'type' => 'datetime',
             'name' => 'created_at',
+            'type' => 'datetime',
+            'label' => 'زمان ایجاد',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
-            'label' => 'تاریخ ارسال',
         ]);
         $this->crud->addColumn([
-            'type' => 'datetime',
             'name' => 'updated_at',
+            'type' => 'datetime',
+            'label' => 'زمان آخرین تغییرات',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
-            'label' => 'تاریخ ویرایش',
         ]);
 
         // add asterisk for fields that are required in ArticleCategoryRequest
@@ -79,14 +79,14 @@ class ArticleCategoryCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->create_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-            $request->offsetSet($key, trim($request->$key));
-            $request->offsetSet($key, stripslashes($request->$key));
-            $request->offsetSet($key, filter_var($request->$key, FILTER_SANITIZE_STRING));
-            $request->offsetSet($key, htmlspecialchars($request->$key));
-        }
+        // $fields = $this->crud->create_fields;
+        // foreach ($fields as $key=>$value) {
+        //     $request->offsetSet($key, strip_tags($request->$key));
+        //     $request->offsetSet($key, trim($request->$key));
+        //     $request->offsetSet($key, stripslashes($request->$key));
+        //     $request->offsetSet($key, filter_var($request->$key, FILTER_SANITIZE_STRING));
+        //     $request->offsetSet($key, htmlspecialchars($request->$key));
+        // }
 
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
@@ -97,14 +97,14 @@ class ArticleCategoryCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->update_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-            $request->offsetSet($key, trim($request->$key));
-            $request->offsetSet($key, stripslashes($request->$key));
-            $request->offsetSet($key, filter_var($request->$key, FILTER_SANITIZE_STRING));
-            $request->offsetSet($key, htmlspecialchars($request->$key));
-        }
+        // $fields = $this->crud->update_fields;
+        // foreach ($fields as $key=>$value) {
+        //     $request->offsetSet($key, strip_tags($request->$key));
+        //     $request->offsetSet($key, trim($request->$key));
+        //     $request->offsetSet($key, stripslashes($request->$key));
+        //     $request->offsetSet($key, filter_var($request->$key, FILTER_SANITIZE_STRING));
+        //     $request->offsetSet($key, htmlspecialchars($request->$key));
+        // }
 
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here

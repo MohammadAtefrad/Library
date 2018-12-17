@@ -31,6 +31,8 @@ class CreateBooksTable extends Migration
             $table->date('return_deadline_date')->nullable();
             $table->date('return_date')->nullable();
             $table->integer('reborrow_count')->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();
         });
     }

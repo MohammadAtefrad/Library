@@ -24,7 +24,7 @@ class ArticleStatusCrudController extends CrudController
          */
         $this->crud->setModel('App\ArticleStatus');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/articlestatus');
-        $this->crud->setEntityNameStrings('articlestatus', 'article_statuses');
+        $this->crud->setEntityNameStrings('وضعیت مقاله', 'وضعیت های مقالات');
 
         /*
         |--------------------------------------------------------------------------
@@ -42,31 +42,31 @@ class ArticleStatusCrudController extends CrudController
         $this->crud->addField([
             'type' => 'text',
             'name' => 'article_status',
-            'lable' => 'Article Status Name',
+            'label' => 'نام وضعیت مقاله',
         ]);
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
             'name' => 'id',
             'type' => 'number',
-            'label' => 'Id',
+            'label' => 'شناسه',
         ]);
         $this->crud->addColumn([
             'name' => 'article_status',
             'type' => 'text',
-            'label' => 'Article Status Name',
+            'label' => 'نام وضعیت مقاله',
         ]);
         $this->crud->addColumn([
-            'type' => 'datetime',
-            'label' => 'Created Time',
             'name' => 'created_at',
+            'type' => 'datetime',
+            'label' => 'زمان ایجاد',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
         ]);
         $this->crud->addColumn([
-            'type' => 'datetime',
-            'label' => 'Updated Time',
             'name' => 'updated_at',
+            'type' => 'datetime',
+            'label' => 'زمان آخرین تغییرات',
             // 'entity' => 'commentStatus', // the method that defines the relationship in your Model
             // 'attribute' => 'comment_status', // foreign key attribute that is shown to user
         ]);
@@ -80,11 +80,6 @@ class ArticleStatusCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->create_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-        }
-
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
@@ -94,11 +89,6 @@ class ArticleStatusCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $fields = $this->crud->update_fields;
-        foreach ($fields as $key=>$value) {
-            $request->offsetSet($key, strip_tags($request->$key));
-        }
-
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
