@@ -10,7 +10,7 @@
 }
 
 body[class^='skin-'] .sidebar-menu>li>a {
-	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
 }
 
 .skin-purple .sidebar-menu>li.header {

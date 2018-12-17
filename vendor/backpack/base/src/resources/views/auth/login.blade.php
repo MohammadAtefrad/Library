@@ -41,7 +41,8 @@
                             <div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> {{ trans('backpack::base.remember_me') }}
+                                        <input type="checkbox" name="remember">
+                                        <span style="padding-right:20px !important">{{ trans('backpack::base.remember_me') }}</span>
                                     </label>
                                 </div>
                             </div>

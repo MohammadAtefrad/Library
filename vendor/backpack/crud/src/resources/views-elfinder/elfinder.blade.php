@@ -44,7 +44,7 @@
         {{ trans('backpack::crud.file_manager') }}
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url(config('backpack.base.route_prefix')) }}">Admin</a></li>
+        <li><a href="{{ url(config('backpack.base.route_prefix')) }}">مدیر</a></li>
         <li class="active">{{ trans('backpack::crud.file_manager') }}</li>
       </ol>
     </section>

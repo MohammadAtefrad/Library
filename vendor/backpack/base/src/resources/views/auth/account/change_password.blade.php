@@ -16,7 +16,7 @@
         {{ trans('backpack::base.my_account') }}
     </h1>
 
-    <ol class="breadcrumb">
+    <ol class="breadcrumb" style="direction:ltr">
 
         <li>
             <a href="{{ backpack_url() }}">{{ config('backpack.base.project_name') }}</a>

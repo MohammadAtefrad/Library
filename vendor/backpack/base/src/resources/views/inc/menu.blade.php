@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="navbar-custom-menu pull-left">
+<div class="navbar-custom-menu pull-right" style="position:absolute; left:0px">
     <ul class="nav navbar-nav">
         <!-- ========================================================= -->
         <!-- ========= Top menu right items (ordered right) ========== -->
@@ -31,7 +31,7 @@
             @else
                 <!-- Topbar. Contains the right part -->
                 @include('backpack::inc.topbar_right_content')
-                <li><a href="{{ route('backpack.auth.logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
+                <li><a href="{{ route('backpack.auth.logout') }}" style="border:0"><i class="fa fa-btn fa-sign-out"></i> {{ trans('backpack::base.logout') }}</a></li>
             @endif
         @endif
         <!-- ========== End of top menu right items ========== -->

@@ -9,16 +9,26 @@
  * Core: General Layout Style
  * -------------------------
  */
+@font-face {
+    font-family: 'b-yekan';
+    /*a name to be used later*/
+    src: url('BYekan.ttf');
+    /*URL to font*/
+}
+
 html,
 body {
   height: 100%;
+  direction: rtl !important;
 }
+
 .layout-boxed html,
 .layout-boxed body {
   height: 100%;
 }
+
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'b-yekan', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: auto;
