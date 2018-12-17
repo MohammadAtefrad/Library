@@ -71,8 +71,7 @@ Route::post('/post/{post}/comment', ['as' => 'postcomment.add', 'uses' => 'postC
  */
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/user/index', ['as' => 'user.index', 'uses' => 'UserController@index']);
-    Route::get('/user/{user}', ['as' => 'user.editprofile', 'uses' => 'UserController@edit_profile']);
-    Route::post('/user', ['as' => 'user.updateprofile', 'uses' => 'UserController@update_profile']);
+    Route::post('/user/{user}', ['as' => 'user.updateprofile', 'uses' => 'UserController@update_profile']);
     Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
     Route::get('/user/{factor}', ['as' => 'user.factor', 'uses' => 'UserController@factor']);
     Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);

@@ -706,7 +706,6 @@ legend {
   /* background-color: #a598ee; */
   /* background-size: cover;
   background-position: center center; */
-  padding: 15px;
 }
 
 .s003 form {
@@ -756,7 +755,7 @@ legend {
 }
 
 .s003 form .inner-form .input-field.first-wrap {
-  width: 200px; 
+  width: 18vw; 
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -770,7 +769,7 @@ legend {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  padding: 10px 30px;
+  padding: 10px;
 }
 
 .s003 form .inner-form .input-field.first-wrap .choices__inner .choices__list.choices__list--single {
@@ -831,6 +830,7 @@ legend {
 }
 
 .s003 form .inner-form .input-field.second-wrap {
+  min-width: 23vw;
   -ms-flex-positive: 1;
       flex-grow: 1;
 }
@@ -871,7 +871,7 @@ legend {
     padding: 20px;
   }
   .s003 form .inner-form .input-field {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -891,7 +891,7 @@ legend {
   }
   .s003 form .inner-form .input-field.second-wrap {
     width: 100%;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
   .s003 form .inner-form .input-field.second-wrap input {
     border: 1px solid rgba(255, 255, 255, 0.3);

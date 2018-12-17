@@ -138,7 +138,7 @@
                         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-8">
+                <div class="col-lg-5 col-md-8 mx-auto">
                     <div class="form">
                         <div id="sendmessage">Your message has been sent. Thank you!</div>
                         <div id="errormessage"></div>

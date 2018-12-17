@@ -13,13 +13,19 @@ class UserController extends Controller
         $user = Auth::user();
         return view('user.index', compact('user'));
     }
-    public function edit_profile()
-    {
-
-    }
-    public function update_profile()
-    {
-
+    
+    public function update_profile(user $user)
+    { 
+        $this->validate(request(), [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'name' => 'required',
+            'phone' => 'required|min:11',
+            'personal_code' => 'required|min:10|max:10',
+        ]);
+        $user->update(request(['firstname' , 'lastname' , 'name' , 'phone' , 'personal_code']));
+        session()->flash('message' , $user->name. ' عزیز، اطلاعات شما با موفقیت ثبت شد ');
+        return view('user.index', compact('user'));
     }
     public function factors()
     {

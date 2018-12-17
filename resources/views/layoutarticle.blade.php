@@ -64,7 +64,7 @@
                             <li>
                                 <form action="{{route('logout')}}" method="post">
                                     {{ csrf_field() }}
-                                    <<button class="col-12 btn btn-xs btn-warning">خروج</button>
+                                    <button class="col-12 btn btn-xs btn-warning">خروج</button>
                                 </form>
                             </li>
                         </ul>
@@ -77,14 +77,20 @@
         </div>
     </header><!-- #header -->
 
-    <div class="d-flex position-relative text-center justify-content-center align-items-center shadow">
+    <div class="d-flex flex-column position-relative text-center justify-content-center align-items-center shadow" style="top:49px;margin-bottom: 20px;">
+        {{-- flash welcoming message --}}
+        @if ($message=session('message'))
+        <div class="col-12 my-0 alert alert-success text-center" style="position-top=48px">
+        {{$message}}
+        </div>
+        @endif
+        {{-- end message --}}
         <img class="img-fluid rounded" src="/img/newsletter-bg.jpg" style="">
         <div class="position-absolute text-white">
-
             {{-- search box --}}
-            <div class="row col-10 col-md-8 mx-auto s003 mb-5">
-                <h1>به کتابخانه ... خوش آمدید</h1>
-                <form class="bg-white rounded mt-4">
+            <div class="row col-10 col-md-10 mx-auto s003" style="dir:rtl">
+                {{-- <h1>به کتابخانه ... خوش آمدید</h1> --}}
+                <form class="bg-white rounded">
                     <div class="inner-form">
                         <div class="input-field first-wrap">
                             <div class="input-select">
@@ -96,7 +102,7 @@
                             </div>
                         </div>
                         <div class="input-field second-wrap">
-                            <input id="search" type="text" placeholder="Enter Keywords" />
+                            <input id="search" type="text" placeholder="کلمه مورد نظر خود را وارد کنید" />
                         </div>
                         <div class="input-field third-wrap">
                             <button class="btn-search rounded" type="button">جستجو</button>
@@ -105,7 +111,6 @@
                 </form>
             </div>
             {{-- end search box --}}
-
         </div>
     </div>
     {{-- content --}}
