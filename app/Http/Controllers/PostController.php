@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Article;
+use App\Book;
 
 class PostController extends Controller
 {
@@ -17,6 +19,22 @@ class PostController extends Controller
     {
         $comments = $post->postComments()->get();
         return view('post.onepost', compact('post' , 'comments'));
+    }
+
+    public function search_post(Request $request)
+    {
+        if(request('category')=='articles'){
+            $articles = Article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('article.index' , compact('articles'));
+        }
+        if(request('category')=='books'){
+            $books = Book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('book.index' , compact('books'));
+        }
+        if(request('category')=='posts'){
+            $posts = Post::with('postCategory')->with('postStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('post.index' , compact('posts'));
+        }
     }
 
     public function add_comment(post $post){

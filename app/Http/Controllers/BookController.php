@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Book;
 use App\BookStatus;
 use Illuminate\Support\Facades\Auth;
+use App\Article;
+use App\Post;
 
 class BookController extends Controller
 {
@@ -47,9 +49,20 @@ class BookController extends Controller
         return back();
     }
 
-    public function search_book()
+    public function search_book(Request $request)
     {
-        //
+        if(request('category')=='articles'){
+            $articles = Article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('article.index' , compact('articles'));
+        }
+        if(request('category')=='books'){
+            $books = Book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('book.index' , compact('books'));
+        }
+        if(request('category')=='posts'){
+            $posts = Post::with('postCategory')->with('postStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('post.index' , compact('posts'));
+        }
     }
 
     public function reserve_book(Request $request, book $book)

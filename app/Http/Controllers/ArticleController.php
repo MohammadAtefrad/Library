@@ -7,6 +7,8 @@ use App\Article;
 use Illuminate\Support\Facades\Validator;
 use App\ArticleCategory;
 use App\User;
+use App\Book;
+use App\Post;
 
 class ArticleController extends Controller
 {
@@ -93,9 +95,20 @@ class ArticleController extends Controller
         return back();
     }
 
-    public function search_article()
+    public function search_article(Request $request)
     {
-        //
+        if(request('category')=='articles'){
+            $articles = article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('article.index' , compact('articles'));
+        }
+        if(request('category')=='books'){
+            $books = Book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('book.index' , compact('books'));
+        }
+        if(request('category')=='posts'){
+            $posts = Post::with('postCategory')->with('postStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('post.index' , compact('posts'));
+        }
     }
 
     public function download_article()

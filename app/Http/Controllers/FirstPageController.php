@@ -23,9 +23,20 @@ class FirstPageController extends Controller
         //
     }
 
-    public function search()
+    public function search(Request $request)
     {
-        return view('firstpage.search');
+        if(request('category')=='articles'){
+            $articles = Article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('article.index' , compact('articles'));
+        }
+        if(request('category')=='books'){
+            $books = Book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('book.index' , compact('books'));
+        }
+        if(request('category')=='posts'){
+            $posts = Post::with('postCategory')->with('postStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
+            return view('post.index' , compact('posts'));
+        }
     }
 
 }

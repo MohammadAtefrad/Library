@@ -90,11 +90,12 @@
             {{-- search box --}}
             <div class="row col-10 col-md-10 mx-auto s003" style="dir:rtl">
                 {{-- <h1>به کتابخانه ... خوش آمدید</h1> --}}
-                <form class="bg-white rounded">
+                <form class="bg-white rounded" method="post" action="{{ route('article.search') }}">
+                    {{ csrf_field() }}
                     <div class="inner-form">
                         <div class="input-field first-wrap">
                             <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
+                                <select data-trigger="" name="category">
                                     <option value="books">کتاب ها</option>
                                     <option value="articles">مقالات</option>
                                     <option value="posts">اخبار</option>
@@ -102,10 +103,10 @@
                             </div>
                         </div>
                         <div class="input-field second-wrap">
-                            <input id="search" type="text" placeholder="کلمه مورد نظر خود را وارد کنید" />
+                            <input id="search" name="search" type="text" placeholder="کلمه مورد نظر خود را وارد کنید" />
                         </div>
                         <div class="input-field third-wrap">
-                            <button class="btn-search rounded" type="button">جستجو</button>
+                            <button class="btn-search rounded" type="submit">جستجو</button>
                         </div>
                     </div>
                 </form>

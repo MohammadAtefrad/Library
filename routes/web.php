@@ -17,7 +17,7 @@
  */
 Route::get('/', ['as' => 'firstpage.index', 'uses' => 'FirstPageController@index']);
 Route::get('/contact', ['as' => 'firstpage.contactus', 'uses' => 'FirstPageController@contact_us']);
-Route::get('/search', ['as' => 'firstpage.search', 'uses' => 'FirstPageController@search']);
+Route::post('/search', ['as' => 'firstpage.search', 'uses' => 'FirstPageController@search']);
 
 /*
  * book controller routes
@@ -26,7 +26,7 @@ Route::get('/book/allbooks', ['as' => 'book.allbooks', 'uses' => 'BookController
 Route::get('/book/{book}', ['as' => 'book.onebook', 'uses' => 'BookController@one_book']);
 Route::get('/book/bycategory', ['as' => 'book.category', 'uses' => 'BookController@books_by_category']);
 Route::get('/book/byalfabet', ['as' => 'book.alfabet', 'uses' => 'BookController@books_by_alfabet']);;
-Route::get('/book/search', ['as' => 'book.search', 'uses' => 'BookController@search_book']);
+Route::post('/book/search', ['as' => 'book.search', 'uses' => 'BookController@search_book']);
 Route::get('/books/reserve/{book}', ['as' => 'book.reserve', 'uses' => 'BookController@reserve_book']);
 Route::get('/books/borrow', ['as' => 'book.borrow', 'uses' => 'BookController@borrow_book']);
 Route::get('/book/category/{category}', ['as' => 'category.books_by_category', 'uses' => 'BookController@books_by_category']);
@@ -40,7 +40,7 @@ Route::get('/article/allarticles', ['as' => 'article.allarticles', 'uses' => 'Ar
 Route::get('/article/{article}', ['as' => 'article.onearticle', 'uses' => 'ArticleController@one_article']);
 Route::get('/article/bycategory', ['as' => 'article.category', 'uses' => 'ArticleController@articles_by_category']);
 Route::get('/article/byalfabet', ['as' => 'article.alfabet', 'uses' => 'ArticleController@articles_by_alfabet']);
-Route::get('/article/search', ['as' => 'article.search', 'uses' => 'AarticleController@search_article']);
+Route::post('/article/search', ['as' => 'article.search', 'uses' => 'ArticleController@search_article']);
 Route::get('/article/download', ['as' => 'article.download', 'uses' => 'ArticleController@download_article']);
 Route::get('/article/category/{category}', ['as' => 'category.articles_by_category', 'uses' => 'ArticleController@articles_by_category']);
 Route::get('/article/alfabet/{letter}', ['as' => 'category.articles_by_alfabet', 'uses' => 'ArticleController@articles_by_alfabet']);
@@ -53,7 +53,7 @@ Route::get('/post/allposts', ['as' => 'post.allposts', 'uses' => 'postController
 Route::get('/post/{post}', ['as' => 'post.onepost', 'uses' => 'postController@one_post']);
 Route::get('/post/bycategory', ['as' => 'post.category', 'uses' => 'postController@posts_by_category']);
 Route::get('/post/byalfabet', ['as' => 'post.alfabet', 'uses' => 'postController@posts_by_alfabet']);
-Route::get('/post/search', ['as' => 'post.search', 'uses' => 'postController@search_post']);
+Route::post('/post/search', ['as' => 'post.search', 'uses' => 'postController@search_post']);
 Route::get('/post/download', ['as' => 'post.download', 'uses' => 'postController@download_post']);
 Route::post('/post/{post}/comment', ['as' => 'postcomment.add', 'uses' => 'postController@add_comment']);
 
