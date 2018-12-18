@@ -94,12 +94,28 @@ class BookController extends Controller
         }
     }
 
-    public function borrow_book(book $selectedBooks)
+    public function cancel_reserve_book(Request $request, $event, book $book)
     {
-        //
-        $selectedBooks = book::whereIn('id', session('bookId'))->get();
-        // dd($selectedBooks);
+        if($event == 'all'){
+            $request->session()->forget('bookId');
+            return redirect('/');
+        }else{
+            $selectedBooks = session()->pull('bookId', []); // Second argument is a default value
+            if(($key = array_search($book->id, $selectedBooks)) !== false) {
+                unset($selectedBooks[$key]);
+            }
+            session()->put('bookId', $selectedBooks);
+            return back();
+        }
+    }
 
-        return view('book.reserve' , compact('selectedBooks'));
+    public function borrow_book(Request $request, book $selectedBooks)
+    {
+        if($request->session()->has('bookId')){
+            $selectedBooks = book::whereIn('id', session('bookId'))->get();
+            return view('book.reserve' , compact('selectedBooks'));
+        }else{
+            return back();
+        }
     }
 }

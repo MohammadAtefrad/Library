@@ -28,6 +28,7 @@ Route::get('/book/bycategory', ['as' => 'book.category', 'uses' => 'BookControll
 Route::get('/book/byalfabet', ['as' => 'book.alfabet', 'uses' => 'BookController@books_by_alfabet']);;
 Route::post('/book/search', ['as' => 'book.search', 'uses' => 'BookController@search_book']);
 Route::get('/books/reserve/{book}', ['as' => 'book.reserve', 'uses' => 'BookController@reserve_book']);
+Route::get('/books/cancel-reserve/{event}/{book}', ['as' => 'book.cancel-reserve', 'uses' => 'BookController@cancel_reserve_book']);
 Route::get('/books/borrow', ['as' => 'book.borrow', 'uses' => 'BookController@borrow_book']);
 Route::get('/book/category/{category}', ['as' => 'category.books_by_category', 'uses' => 'BookController@books_by_category']);
 Route::get('/book/alfabet/{letter}', ['as' => 'category.books_by_alfabet', 'uses' => 'BookController@books_by_alfabet']);
