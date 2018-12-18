@@ -31,7 +31,8 @@ class BookController extends Controller
         return view('book.index' , compact('books'));
     }
 
-    public function add_comment(book $book){
+    public function add_comment(book $book)
+    {
         $this->validate(request(), [
             'body' => 'required|min:5',
         ]);
@@ -49,7 +50,7 @@ class BookController extends Controller
         //
     }
 
-    public function reserve_book()
+    public function add_to_cart_book()
     {
         //
     }
