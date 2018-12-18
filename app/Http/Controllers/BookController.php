@@ -57,7 +57,9 @@ class BookController extends Controller
         if(Auth::user() != null){
             $userId = Auth::user()->id;
 
-            // return $userId;
+            session(['userId' => $userId]);
+
+            return session('userId');
         }else{
             return "no!";
         }
