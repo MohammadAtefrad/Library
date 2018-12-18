@@ -121,7 +121,7 @@ class BookController extends Controller
         }
     }
 
-    public function make_factor()
+    public function make_factor(Request $request)
     {
         //
         $factorStatus = FactorStatus::where('factor_status', 'جدید')->get();
@@ -133,6 +133,7 @@ class BookController extends Controller
         $newFactor->save();
         $newFactor->books()->attach(session('bookId'));
 
+        $request->session()->forget('bookId');
         return redirect('/');
     }
 }
