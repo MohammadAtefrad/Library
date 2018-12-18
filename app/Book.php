@@ -72,7 +72,7 @@ class Book extends Model
      */
     public function factors()
     {
-        return $this->belongsToMany('App\Factor');
+        return $this->belongsToMany('App\Factor')->withTimestamps();;
     }
 
     /**
@@ -80,7 +80,7 @@ class Book extends Model
      */
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->withTimestamps();;
     }
 
     public function users2()

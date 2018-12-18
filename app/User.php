@@ -76,7 +76,7 @@ class User extends Model implements AuthenticatableContract
      */
     public function articles()
     {
-        return $this->belongsToMany('App\Article');
+        return $this->belongsToMany('App\Article')->withTimestamps();;
     }
 
     /**
@@ -92,7 +92,7 @@ class User extends Model implements AuthenticatableContract
      */
     public function books()
     {
-        return $this->belongsToMany('App\Book');
+        return $this->belongsToMany('App\Book')->withTimestamps();;
     }
 
     /**
