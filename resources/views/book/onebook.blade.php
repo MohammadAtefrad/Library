@@ -13,12 +13,18 @@
                         <p class="font-weight-bold">نویسنده : {{ $book->author }}</p>
                         <p class="font-weight-bold">دسته بندی : {{ $book->BookCategory->book_category }}</p>
                         <p class="font-weight-bold">تاریخ انتشار : {{ jdate($book->published_date)->format('%d %B %Y') }}</p>
-                        <p class="font-weight-bold text-success" >وضعیت کتاب : {{ $book->BookStatus->book_status }}</p>     
+                        <p class="font-weight-bold text-success" >وضعیت کتاب : {{ $book->BookStatus->book_status }}</p>
                     </div>
-                </div>                
+                </div>
                 <hr class="my-4 shadow">
                 <p class="lead">{{ $book->description }}.</p>
-                <a class="btn btn-success btn-lg" href="#" role="button">سفارش کتاب</a>
+                @if (auth()->check())
+                    <a class="btn btn-success btn-lg" href="{{ route('book.reserve' , ['book' => $book->id]) }}" role="button">سفارش کتاب</a>
+                @else
+                    {{-- <div class="alert alert-warning col-6" role="alert"> --}}
+                        <a href="/register" class="btn btn-warning btn-lg">برای رزرو کتاب باید عضو وبسایت باشید</a>
+                    {{-- </div> --}}
+                @endif
             </div>
             <hr>
             <!-- Comments -->

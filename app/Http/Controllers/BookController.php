@@ -51,17 +51,19 @@ class BookController extends Controller
         //
     }
 
-    public function reserve_book(Request $request)
+    public function reserve_book(book $book)
     {
         //
         if(Auth::user() != null){
             $userId = Auth::user()->id;
-
             session(['userId' => $userId]);
+            session(['bookId' => $book->id]);
 
-            return session('userId');
+            dd(session()->all());
         }else{
-            return "no!";
+            // return "no!";
+            session()->flash('commentmessage' , 'برای رزو کتاب ابتدا باید وارد حساب کاربری خود شوید');
+            return back();
         }
         // $id = auth()->user()->id;
         // $books = book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['letter'].'%')->latest()->paginate(10);

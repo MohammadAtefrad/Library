@@ -27,7 +27,7 @@ Route::get('/book/{book}', ['as' => 'book.onebook', 'uses' => 'BookController@on
 Route::get('/book/bycategory', ['as' => 'book.category', 'uses' => 'BookController@books_by_category']);
 Route::get('/book/byalfabet', ['as' => 'book.alfabet', 'uses' => 'BookController@books_by_alfabet']);;
 Route::get('/book/search', ['as' => 'book.search', 'uses' => 'BookController@search_book']);
-Route::get('/books/reserve', ['as' => 'book.reserve', 'uses' => 'BookController@reserve_book']);
+Route::get('/books/reserve/{book}', ['as' => 'book.reserve', 'uses' => 'BookController@reserve_book']);
 Route::get('/book/category/{category}', ['as' => 'category.books_by_category', 'uses' => 'BookController@books_by_category']);
 Route::get('/book/alfabet/{letter}', ['as' => 'category.books_by_alfabet', 'uses' => 'BookController@books_by_alfabet']);
 Route::post('/book/{book}/comment', ['as' => 'bookcomment.add', 'uses' => 'BookController@add_comment']);
