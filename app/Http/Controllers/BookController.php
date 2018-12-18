@@ -63,14 +63,17 @@ class BookController extends Controller
 
             if(! $request->session()->has('bookId')){
                 $request->session()->put('bookId', []);
-            }else if(! in_array($book->id, session('bookId'))){
-                $request->session()->push('bookId', $book->id);
-
-                $bookStatus = BookStatus::where('book_status', "در حال امانت گرفته شدن")->get();
-                $updateInstance = Book::where('id', $book->id)->update(['book_status_id' => $bookStatus[0]->id]);
             }
 
-            return(session('bookId'));
+            if(! in_array($book->id, session('bookId'))){
+                $request->session()->push('bookId', $book->id);
+
+                // $bookStatus = BookStatus::where('book_status', "در حال امانت گرفته شدن")->get();
+                // $updateInstance = Book::where('id', $book->id)->update(['book_status_id' => $bookStatus[0]->id]);
+            }
+
+            // return(session('bookId'));
+            return back();
         }else{
             // return "برای رزرو کتاب باید عضو سایت باشید.";
             // session()->flash('commentmessage' , 'برای رزو کتاب ابتدا باید وارد حساب کاربری خود شوید');
@@ -78,8 +81,12 @@ class BookController extends Controller
         }
     }
 
-    public function borrow_book()
+    public function borrow_book(book $selectedBooks)
     {
         //
+        $selectedBooks = book::whereIn('id', session('bookId'))->get();
+        // dd($selectedBooks);
+
+        return view('book.reserve' , compact('selectedBooks'));
     }
 }
