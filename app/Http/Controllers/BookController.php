@@ -134,6 +134,7 @@ class BookController extends Controller
         $newFactor->books()->attach(session('bookId'));
 
         $request->session()->forget('bookId');
+        session()->flash('message' , '.فاکتور با موفقیت صادر شد');
         return redirect('/');
     }
 }
