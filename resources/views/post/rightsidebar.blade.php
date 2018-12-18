@@ -1,4 +1,4 @@
-<div class="col-3 col-md-3 border-left border-top text-right">
+<div class="col-3 col-md-3 border text-right">
     <div class="d-flex flex-column mr-4">
         <ul class="list-unstyled">
             <h3 class="my-4 text-center">کتاب ها</h3>

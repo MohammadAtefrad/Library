@@ -25,8 +25,16 @@
             @if (auth()->check())
             <div class="well">
                 @include('layouts.errors')
-                <h4>ارسال کامنت :</h4>
+                <h4>نظرات</h4>
                 <hr>
+                {{-- flash welcoming message --}}
+                @if ($message=session('commentmessage'))
+                <div class="col-12 my-0 alert alert-success text-center" style="position-top=48px">
+                {{$message}}
+                </div>
+                <hr>
+                @endif
+                {{-- end message --}}
                 <form role="form" method="POST" action="{{ route('bookcomment.add' , ['book'=>$book->id]) }}">
                     {{ csrf_field() }}
                     <label for="body">متن :</label>
@@ -42,13 +50,11 @@
             <hr>
             <!-- Posted Comments -->
             @foreach ($comments as $comment)
-            <div class="media pb-4">
-                <div class="media-body">
-                    <h6 class="">
-                        <small>ارسال شده در تاریخ {{ jdate($comment->created_at)->format('%d %B، %Y') }}</small>
-                        {{$comment->user->name}}
-                    </h6>
-                    <p>{{$comment->body}}</p>
+            <div class="media pb-1 border">
+                <div class="d-flex flex-wrap flex-row-reverse media-body text-right">
+                    <h6 class="col-12 col-md-6" style="background-color: rgb(237, 237, 237);">{{$comment->user->name}}</h6>
+                    <h6 class="col-12 col-md-6" style="background-color: rgb(237, 237, 237);"><small> در {{ jdate($comment->created_at)->format('%d %B %Y') }}</small></h6>
+                    <p class="col-12">{{$comment->body}}</p>
                 </div>
             </div>
             @endforeach

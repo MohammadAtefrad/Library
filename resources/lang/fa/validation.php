@@ -97,7 +97,10 @@ return array(
     |
     */
     'attributes' => array(
-        "name" => "نام",
+        "name" => "نام کامل",
+        "firstname" => "نام",
+        "lastname" => "نام خانوادگی",
+        "personal_code" => "کد ملی",
         "username" => "نام کاربری",
         "email" => "پست الکترونیکی",
         "first_name" => "نام",
