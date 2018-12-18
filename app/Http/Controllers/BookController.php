@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
@@ -50,9 +51,20 @@ class BookController extends Controller
         //
     }
 
-    public function add_to_cart_book()
+    public function reserve_book(Request $request)
     {
         //
+        if(Auth::user() != null){
+            $userId = Auth::user()->id;
+
+            // return $userId;
+        }else{
+            return "no!";
+        }
+        // $id = auth()->user()->id;
+        // $books = book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['letter'].'%')->latest()->paginate(10);
+        // return view('book.index' , compact('books'));
+
     }
 
     public function borrow_book()
