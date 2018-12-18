@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Book;
 use App\BookStatus;
-use Illuminate\Support\Facades\Auth;
 use App\Article;
 use App\Post;
+use App\Factor;
+use App\FactorStatus;
 
 class BookController extends Controller
 {
@@ -117,5 +119,20 @@ class BookController extends Controller
         }else{
             return back();
         }
+    }
+
+    public function make_factor()
+    {
+        //
+        $factorStatus = FactorStatus::where('factor_status', 'جدید')->get();
+
+        $newFactor = new Factor;
+        $newFactor->user_id = session('userId');
+        $newFactor->books_number = count(session('bookId'));
+        $newFactor->factor_status_id = $factorStatus[0]->id;
+        $newFactor->save();
+        $newFactor->books()->attach(session('bookId'));
+
+        return redirect('/');
     }
 }

@@ -21,11 +21,12 @@ use Backpack\CRUD\CrudTrait;
 class Factor extends Model
 {
     use CrudTrait;
-    
+
     /**
      * @var array
      */
     protected $fillable = ['user_id', 'factor_status_id', 'books_number', 'created_at', 'updated_at'];
+    // public $timestamps = true;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

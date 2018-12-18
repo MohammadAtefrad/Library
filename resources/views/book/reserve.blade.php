@@ -33,7 +33,7 @@
         <div class="d-flex flex-column">
             <div class="row">
                 <div class="col-6">
-                    <a href="" class="btn btn-success btn-lg w-100 py-3">ثبت نهایی رزرو و صدور فاکتور</a>
+                    <a href="{{ route('book.factor') }}" class="btn btn-success btn-lg w-100 py-3">ثبت نهایی رزرو و صدور فاکتور</a>
                 </div>
                 <div class="col-6">
                     <a href="{{ route('book.cancel-reserve' , ['event' => 'all', 'book' => 1]) }}" class="btn btn-secondary btn-lg w-100 py-3">انصراف و خالی کردن ثبت امانت</a>
