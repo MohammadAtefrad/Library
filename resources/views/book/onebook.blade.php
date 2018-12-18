@@ -19,7 +19,11 @@
                 <hr class="my-4 shadow">
                 <p class="lead">{{ $book->description }}.</p>
                 @if (auth()->check())
-                    <a class="btn btn-success btn-lg" href="{{ route('book.reserve' , ['book' => $book->id]) }}" role="button">سفارش کتاب</a>
+                    @if($book->BookStatus->book_status == "موجود")
+                        <a class="btn btn-success btn-lg" href="{{ route('book.reserve' , ['book' => $book->id]) }}" role="button">سفارش کتاب</a>
+                    @else
+                        <a class="btn btn-warning btn-lg">در حال حاضر امکان رزرو کتاب وجود ندارد</a>
+                    @endif
                 @else
                     {{-- <div class="alert alert-warning col-6" role="alert"> --}}
                         <a href="/register" class="btn btn-warning btn-lg">برای رزرو کتاب باید عضو وبسایت باشید</a>

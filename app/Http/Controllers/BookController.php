@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\BookStatus;
 use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
@@ -51,24 +52,30 @@ class BookController extends Controller
         //
     }
 
-    public function reserve_book(book $book)
+    public function reserve_book(Request $request, book $book)
     {
         //
-        if(Auth::user() != null){
-            $userId = Auth::user()->id;
-            session(['userId' => $userId]);
-            session(['bookId' => $book->id]);
+        if(auth()->check()){
+            if(! $request->session()->has('userId')){
+                $userId = Auth::user()->id;
+                session(['userId' => $userId]);
+            }
 
-            dd(session()->all());
+            if(! $request->session()->has('bookId')){
+                $request->session()->put('bookId', []);
+            }else if(! in_array($book->id, session('bookId'))){
+                $request->session()->push('bookId', $book->id);
+
+                $bookStatus = BookStatus::where('book_status', "در حال امانت گرفته شدن")->get();
+                $updateInstance = Book::where('id', $book->id)->update(['book_status_id' => $bookStatus[0]->id]);
+            }
+
+            return(session('bookId'));
         }else{
-            // return "no!";
-            session()->flash('commentmessage' , 'برای رزو کتاب ابتدا باید وارد حساب کاربری خود شوید');
+            // return "برای رزرو کتاب باید عضو سایت باشید.";
+            // session()->flash('commentmessage' , 'برای رزو کتاب ابتدا باید وارد حساب کاربری خود شوید');
             return back();
         }
-        // $id = auth()->user()->id;
-        // $books = book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['letter'].'%')->latest()->paginate(10);
-        // return view('book.index' , compact('books'));
-
     }
 
     public function borrow_book()
