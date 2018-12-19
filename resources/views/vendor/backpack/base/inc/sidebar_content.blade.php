@@ -50,9 +50,16 @@
     </ul>
 </li>
 
-<li><a href='{{ backpack_url('factor') }}'><i class='fa fa-cart-arrow-down sidebar_right_menu_li'></i> <span>فاکتور ها</span></a></li>
+<li class="treeview">
+    <a href="#"><i class="fa fa-cart-arrow-down sidebar_right_menu_li"></i> <span>فاکتور</span> <i class="fa fa-angle-right pull-right"></i></a>
+    <ul class="treeview-menu">
+        <li><a href='{{ backpack_url('factor') }}'><i class='fa fa-cart-arrow-down sidebar_right_menu_li'></i> <span>فاکتور ها</span></a></li>
+        <li><a href='{{ backpack_url('factorstatus') }}'><i class='fa fa-lightbulb-o sidebar_right_menu_li'></i> <span>وضعیت های فاکتورها</span></a></li>
+    </ul>
+</li>
 
 <li><a href='{{ backpack_url('commentstatus') }}'><i class='fa fa-comments-o sidebar_right_menu_li'></i> <span>وضیعت های نظرات</span></a></li>
+
 
 
 

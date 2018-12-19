@@ -31,4 +31,5 @@ Route::group([
     CRUD::resource('role', 'RoleCrudController');
     CRUD::resource('user', 'UserCrudController');
     CRUD::resource('userstatus', 'UserStatusCrudController');
+    CRUD::resource('factorstatus', 'FactorStatusCrudController');
 }); // this should be the absolute last line of this file
