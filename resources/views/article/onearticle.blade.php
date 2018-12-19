@@ -17,7 +17,7 @@
                 </div>                
                 <hr class="my-4 shadow">
                 <p class="lead">{{ $article->description }}.</p>
-                <a class="btn btn-success btn-lg" href="#" role="button">دانلود</a>
+                <a class="btn btn-success btn-lg" href="{{ route('article.download' , ['article'=>$article->id]) }}" role="button">دانلود</a>
             </div>
             <hr>
             <!-- Comments -->

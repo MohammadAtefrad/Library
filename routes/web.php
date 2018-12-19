@@ -43,7 +43,7 @@ Route::get('/article/{article}', ['as' => 'article.onearticle', 'uses' => 'Artic
 Route::get('/article/bycategory', ['as' => 'article.category', 'uses' => 'ArticleController@articles_by_category']);
 Route::get('/article/byalfabet', ['as' => 'article.alfabet', 'uses' => 'ArticleController@articles_by_alfabet']);
 Route::post('/article/search', ['as' => 'article.search', 'uses' => 'ArticleController@search_article']);
-Route::get('/article/download', ['as' => 'article.download', 'uses' => 'ArticleController@download_article']);
+Route::get('/article/download/{article}', ['as' => 'article.download', 'uses' => 'ArticleController@download_article']);
 Route::get('/article/category/{category}', ['as' => 'category.articles_by_category', 'uses' => 'ArticleController@articles_by_category']);
 Route::get('/article/alfabet/{letter}', ['as' => 'category.articles_by_alfabet', 'uses' => 'ArticleController@articles_by_alfabet']);
 Route::post('/article/{article}/comment', ['as' => 'articlecomment.add', 'uses' => 'ArticleController@add_comment']);

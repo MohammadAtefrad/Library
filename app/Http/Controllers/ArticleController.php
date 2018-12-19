@@ -111,8 +111,14 @@ class ArticleController extends Controller
         }
     }
 
-    public function download_article()
+    public function download_article(Article $article)
     {
-        //
+        $name=$article->title;
+        $file= public_path('/img/article/'.$article->id.'.pdf');
+        $headers = array(
+                  'Content-Type: application/octet-stream',
+                );
+
+        return response()->download($file, $name.'.pdf', $headers);
     }
 }
