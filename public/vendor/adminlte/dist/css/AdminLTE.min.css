@@ -6,15 +6,10 @@
  *           Please visit http://opensource.org/licenses/MIT for more information
  */
  @font-face {
-    font-family: 'b-yekan';
+    font-family: 'Tanha-FD';
     /*a name to be used later*/
-    src: url('BYekan.ttf');
+    src: url('Tanha-FD.ttf');
     /*URL to font*/
-}
-
-*{
-    /* font-family: 'b-yekan' !important; */
-    /* direction: rtl !important; */
 }
 
 #crudTable_length {
@@ -30,10 +25,6 @@
     margin-left:1vh !important;
 }
 
-.treeview {
-    /* direction: rtl; */
-}
-
 html,
 body {
     height: 100%;
@@ -46,7 +37,7 @@ body {
 }
 
 body {
-    font-family: 'b-yekan', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Tanha-FD', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
     overflow-x: hidden;
     overflow-y: auto
@@ -203,7 +194,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'b-yekan', 'Source Sans Pro', sans-serif
+    font-family: 'Tanha-FD', 'Source Sans Pro', sans-serif
 }
 
 a {
@@ -355,7 +346,7 @@ a:focus {
     line-height: 50px;
     text-align: center;
     width: 230px;
-    font-family: 'b-yekan', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Tanha-FD', "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0 15px;
     font-weight: 300;
     overflow: hidden
@@ -5821,3 +5812,73 @@ table.text-center th {
         white-space: normal !important
     }
 }
+
+/* my persian css */
+
+table {
+    direction: rtl !important;
+}
+
+th {
+    text-align: center !important;
+}
+
+.sorting_disabled {
+    text-align: center !important;
+}
+
+.fixedHeader-floating {
+    /* position: fixed; */
+    left: 15px !important;
+}
+
+tfoot>tr>th:last-of-type {
+    text-align: center !important;
+}
+
+.content-header>.breadcrumb {
+    right: 10px !important;
+    direction: rtl !important;
+}
+
+@media (max-width:991px) {
+    .content-header>.breadcrumb {
+        right: 0px !important;
+    }
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+    right: 4px !important;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
+    padding-right: 30px !important;
+    padding-left: 8px !important;
+}
+
+th, td {
+    border-right: 1pt solid lightgray !important;
+    /* border-left: 1pt solid lightgray !important; */
+    border-collapse: collapse !important;
+}
+
+th:first-of-type, td:first-of-type {
+    border-right: 0pt !important;
+    text-align: center !important;
+}
+
+th:last-of-type, td:last-of-type {
+    text-align: center !important;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+thead, tfoot {
+    background-color: #222d32 !important;
+    /* background-color: yellow !important; */
+    color: white !important;
+}
+
+/*  */
