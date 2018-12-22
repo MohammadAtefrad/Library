@@ -5878,6 +5878,28 @@ thead, tfoot {
     direction: ltr !important;
 }
 
+.user-panel {
+    background-color: #3c8dbc !important;
+    /* background-color: black !important; */
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info>p>a, .info>small>small>a {
+    color: #fff !important;
+}
+
+.logo-lg, .logo-mini {
+    text-shadow: 2px 2px 5px black !important;
+}
+
+.logo {
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+table, .main-sidebar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
 @media (max-width:991px) {
     .content-header>.breadcrumb {
         right: 0px !important;
