@@ -5852,7 +5852,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child, table.
 
 th, td {
     border-right: 1pt solid lightgray !important;
-    /* border-left: 1pt solid lightgray !important; */
     border-collapse: collapse !important;
 }
 
