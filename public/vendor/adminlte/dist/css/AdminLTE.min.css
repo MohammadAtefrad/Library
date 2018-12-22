@@ -5813,8 +5813,7 @@ table.text-center th {
     }
 }
 
-/* my persian css */
-
+/* My Persian CSS */
 table {
     direction: rtl !important;
 }
@@ -5841,11 +5840,6 @@ tfoot>tr>th:last-of-type {
     direction: rtl !important;
 }
 
-@media (max-width:991px) {
-    .content-header>.breadcrumb {
-        right: 0px !important;
-    }
-}
 
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
     right: 4px !important;
@@ -5881,4 +5875,20 @@ thead, tfoot {
     color: white !important;
 }
 
+.dataTables_paginate {
+    direction: ltr !important;
+}
+
+@media (max-width:991px) {
+    .content-header>.breadcrumb {
+        right: 0px !important;
+    }
+}
+
+@media (max-width:767px) {
+    .dataTables_paginate {
+        text-align: right !important;
+        direction: ltr !important;
+    }
+}
 /*  */
