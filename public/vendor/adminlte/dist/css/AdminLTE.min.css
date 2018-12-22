@@ -5900,6 +5900,10 @@ table, .main-sidebar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
+.content-wrapper {
+    background-image: linear-gradient(to right, #ecf0f5, white , #ecf0f5) !important;
+}
+
 @media (max-width:991px) {
     .content-header>.breadcrumb {
         right: 0px !important;
