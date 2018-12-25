@@ -78,7 +78,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
     Route::get('/user/{factor}', ['as' => 'user.factor', 'uses' => 'UserController@factor']);
     Route::get('/user/factors', ['as' => 'user.factors', 'uses' => 'UserController@factors']);
-    Route::get('/user/usersbookarticle', ['as' => 'user.bookarticle', 'uses' => 'UserController@users_book_article']);
+    Route::get('/users/books', ['as' => 'user.books', 'uses' => 'UserController@user_books']);
+    Route::get('/user/articles', ['as' => 'user.articles', 'uses' => 'UserController@user_articles']);
     Route::get('/user/{comments}', ['as' => 'user.comments', 'uses' => 'UserController@comments']);
     Route::get('/user/{messages}', ['as' => 'user.messages', 'uses' => 'UserController@messages']);
     Route::get('/user/sendmessage', ['as' => 'user.sendmessage', 'uses' => 'UserController@send_message']);
