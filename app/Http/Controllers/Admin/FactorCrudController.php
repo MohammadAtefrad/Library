@@ -99,9 +99,16 @@ class FactorCrudController extends CrudController
             'label' => 'زمان آخرین تغییرات',
         ]);
 
+        $this->crud->addButtonFromView('line', 'accept', 'accept', 'beginning');
+
         // add asterisk for fields that are required in FactorRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
+    }
+
+    public function accept()
+    {
+    //
     }
 
     public function store(StoreRequest $request)

@@ -33,3 +33,5 @@ Route::group([
     CRUD::resource('userstatus', 'UserStatusCrudController');
     CRUD::resource('factorstatus', 'FactorStatusCrudController');
 }); // this should be the absolute last line of this file
+
+Route::get('factor/{id}/accept', 'FactorCrudController@ban');
