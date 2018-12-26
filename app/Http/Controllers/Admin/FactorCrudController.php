@@ -82,6 +82,13 @@ class FactorCrudController extends CrudController
             'attribute' => 'name',
         ]);
         $this->crud->addColumn([
+            'name' => 'factor_status_id',
+            'type' => 'select',
+            'label' => 'وضعیت فاکتور',
+            'entity' => 'factorStatus',
+            'attribute' => 'factor_status',
+        ]);
+        $this->crud->addColumn([
             'name' => 'created_at',
             'type' => 'datetime',
             'label' => 'زمان ایجاد',
