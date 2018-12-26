@@ -33,7 +33,7 @@ class BookController extends Controller
 
     public function books_by_alfabet(Request $request)
     {
-        $books = book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['letter'].'%')->latest()->paginate(10);
+        $books = book::with('bookCategory')->with('bookStatus')->where('name','like', $request['letter'].'%')->latest()->paginate(10);
         return view('book.index' , compact('books'));
     }
 
