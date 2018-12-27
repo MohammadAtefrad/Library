@@ -94,4 +94,5 @@
 @section('after_scripts')
 	<script src="{{ asset('vendor/backpack/crud/js/crud.js') }}"></script>
 	<script src="{{ asset('vendor/backpack/crud/js/show.js') }}"></script>
+	<script src="{{ asset('vendor/backpack/crud/js/status.js') }}"></script>
 @endsection

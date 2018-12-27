@@ -8,6 +8,8 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use App\Http\Requests\FactorRequest as StoreRequest;
 use App\Http\Requests\FactorRequest as UpdateRequest;
 
+use App\Factor;
+
 /**
  * Class FactorCrudController
  * @package App\Http\Controllers\Admin
@@ -93,23 +95,27 @@ class FactorCrudController extends CrudController
             'type' => 'datetime',
             'label' => 'زمان ایجاد',
         ]);
+        $this->crud->setColumnDetails('created_at', ['color' => 'red']); // adjusts the properties of the passed in column (by name)
         $this->crud->addColumn([
             'name' => 'updated_at',
             'type' => 'datetime',
             'label' => 'زمان آخرین تغییرات',
         ]);
 
-        // $this->crud->addButtonFromView('line', 'accept', 'accept', 'beginning');
-        $this->crud->addButtonFromModelFunction('line', 'open_google', 'accept', 'beginning'); // add a button whose HTML is returned by a method in the CRUD model
+        $this->crud->addButtonFromView('line', 'accept', 'accept', 'beginning');
 
         // add asterisk for fields that are required in FactorRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }
 
-    public function accept()
+    public function accept(Factor $factor)
     {
-    //
+        // return "hellow";
+        $updateStatus = Factor::where('id', $factor->id)->update(['factor_status_id' => 2]);
+        // $updateStatus = Factor::where('id', $factor->id)->get();
+        return back();
+        // return $updateStatus;
     }
 
     public function store(StoreRequest $request)

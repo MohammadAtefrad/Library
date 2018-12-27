@@ -32,6 +32,8 @@ Route::group([
     CRUD::resource('user', 'UserCrudController');
     CRUD::resource('userstatus', 'UserStatusCrudController');
     CRUD::resource('factorstatus', 'FactorStatusCrudController');
+    Route::get('factor/{factor}/accept', ['as' => 'factor.accept', 'uses' => 'FactorCrudController@accept']);
 }); // this should be the absolute last line of this file
 
-Route::get('factor/{id}/accept', 'FactorCrudController@ban');
+// Route::get('factor/{id}/accept', 'UserCrudController@ban');
+
