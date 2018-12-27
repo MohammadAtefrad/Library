@@ -28,6 +28,18 @@ class Factor extends Model
     protected $fillable = ['user_id', 'factor_status_id', 'books_number', 'created_at', 'updated_at'];
     // public $timestamps = true;
 
+    /*
+    |--------------------------------------------------------------------------
+    | FUNCTIONS
+    |--------------------------------------------------------------------------
+    */
+
+    public function accept($crud = false)
+    {
+        return '<a class="btn btn-xs btn-default" target="_blank" href="http://google.com?q='.urlencode($this->text).'" data-toggle="tooltip" title="Just a demo custom button."><i class="fa fa-search"></i> Google it</a>';
+    }
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

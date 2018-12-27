@@ -99,7 +99,8 @@ class FactorCrudController extends CrudController
             'label' => 'زمان آخرین تغییرات',
         ]);
 
-        $this->crud->addButtonFromView('line', 'accept', 'accept', 'beginning');
+        // $this->crud->addButtonFromView('line', 'accept', 'accept', 'beginning');
+        $this->crud->addButtonFromModelFunction('line', 'open_google', 'accept', 'beginning'); // add a button whose HTML is returned by a method in the CRUD model
 
         // add asterisk for fields that are required in FactorRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
