@@ -5917,10 +5917,6 @@ table, .main-sidebar {
     }
 }
 
-.navbar-nav {
-    dir ection: rtl !important;
-}
-
 .container-fluid, .navbar-nav, .navbar-brand {
     padding-right: 0 !important;
 }
