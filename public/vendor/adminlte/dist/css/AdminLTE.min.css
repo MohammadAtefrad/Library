@@ -5860,7 +5860,7 @@ th:first-of-type, td:first-of-type {
     text-align: center !important;
 }
 
-th:last-of-type, td:last-of-type {
+th:last-of-type {
     text-align: center !important;
 }
 
@@ -5915,5 +5915,21 @@ table, .main-sidebar {
         text-align: right !important;
         direction: ltr !important;
     }
+}
+
+.navbar-nav {
+    dir ection: rtl !important;
+}
+
+.container-fluid, .navbar-nav, .navbar-brand {
+    padding-right: 0 !important;
+}
+
+.collapse, .navbar-header {
+    float: right !important;
+}
+
+.highlight {
+    background-color: yellow !important;
 }
 /*  */

@@ -102,7 +102,11 @@ class FactorCrudController extends CrudController
             'label' => 'زمان آخرین تغییرات',
         ]);
 
-        $this->crud->addButtonFromView('line', 'accept', 'accept', 'beginning');
+        // ------ CRUD BUTTONS
+        $this->crud->addButtonFromView('line', 'accept', 'accept', 'end');
+
+        // ------ FILTERS
+        $this->addCustomCrudFilters();
 
         // add asterisk for fields that are required in FactorRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
@@ -138,5 +142,18 @@ class FactorCrudController extends CrudController
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
+    }
+
+    public function addCustomCrudFilters()
+    {
+        $this->crud->addFilter([ // simple filter
+            'type' => 'text',
+            'name' => 'description',
+            'label'=> 'شناسه فاکتور'
+          ],
+          false,
+          function($value) { // if the filter is active
+              $this->crud->addClause('where', 'id', 'LIKE', "%$value%");
+          } );
     }
 }

@@ -85,6 +85,7 @@
     </script>
 
     <!-- JavaScripts -->
+    <script src="{{ asset('vendor/backpack/crud/js/myJs.js') }}"></script>
     {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 </body>
 </html>

@@ -4,7 +4,9 @@
 
 @if ($crud->hasAccess('update'))
     @if ($entry->factorStatus->factor_status == 'جدید')
-        <a href="{{ route('factor.accept' , ['id' => $entry->getKey()]) }}" class="btn btn-xs btn-default"><i class="fa fa-check"></i> تایید فاکتور</a>
+        <a href="{{ route('factor.accept' , ['id' => $entry->getKey()]) }}" class="btn btn-xs btn-success"><i class="fa fa-check"></i> تایید فاکتور</a>
+    @else
+        {{-- <a href="{{ route('factor.accept' , ['id' => $entry->getKey()]) }}" class="btn btn-xs btn-danger"><i class="fa fa-check"></i> تایید فاکتور</a> --}}
     @endif
 @endif
 
