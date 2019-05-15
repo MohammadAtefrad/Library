@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>کتاب ها</title>
+    <title>{{ config('layoutbook.name', 'کتاب ها') }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <!-- Scripts -->
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Favicons -->
     <link href="/img/favicon.png" rel="icon">
@@ -16,6 +19,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
         rel="stylesheet">
+        
+    <!--font-->
+    <link href="/css/fontiran.css" rel="stylesheet">
 
     <!-- Libraries CSS Files -->
     <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -23,21 +29,19 @@
     <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/lib/animate/animate.min.css" rel="stylesheet">
     <link href="/lib/modal-video/css/modal-video.min.css" rel="stylesheet">
-    <!-- Main Stylesheet File -->
-    <link href="/css/style.css" rel="stylesheet">
-
-    <!-- serch box style files -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet" />
 
     <!-- Bootstrap css -->
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="/css/bootstrap-rtl.min.css" rel="stylesheet"> --}}
 
-    <link href="/css/fontiran.css" rel="stylesheet">
+    <!-- serch box style files -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+
     <!-- Main Stylesheet File -->
-    <link href="/css/style.css" rel="stylesheet">
+    <link href={{ asset("/css/style.css") }} rel="stylesheet">
     {{-- <link href="/css/styles.rtl.css" rel="stylesheet"> --}}
+
     @yield('styles')
 </head>
 

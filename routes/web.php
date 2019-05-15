@@ -11,7 +11,6 @@
 |
 */
 
-
 /*
  * firstpage controller routes
  */
@@ -86,5 +85,8 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Auth::routes();
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Event::listen('illuminate.query', function ($query) {
+    var_dump($query);
+});

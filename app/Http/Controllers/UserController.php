@@ -29,34 +29,21 @@ class UserController extends Controller
         return view('user.index', compact('user'));
     }
     public function factors()
-    {
-
-    }
+    { }
     public function factor()
-    {
-
-    }
-    public function user_articles()
-    {
-
-    }
+    { }
     public function user_books()
     {
         $user = Auth::user();
-        $bookfactor = Factor::with('books')->where('user_id',$user['id'])->get();
-        return view('user.bookborrowed', compact('bookfactor','user'));
+        $bookfactor = Factor::with('books')->where('user_id', $user['id'])->get();
+        return view('user.bookborrowed', compact('bookfactor', 'user'));
     }
+    public function user_articles()
+    { }
     public function comments()
-    {
-
-    }
+    { }
     public function messages()
-    {
-
-    }
+    { }
     public function send_message()
-    {
-
-    }
-
+    { }
 }

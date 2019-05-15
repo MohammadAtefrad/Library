@@ -12,28 +12,45 @@ use App\Post;
 
 class ArticleController extends Controller
 {
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function all_articles()
     {
         $articles = article::with('articleCategory')->with('articleStatus')->latest()->paginate(10);
         return view('article.index', compact('articles'));
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param Article $article
+     * @return void
+     */
     public function one_article(Article $article)
     {
         $comments = $article->articleComments()->get();
-        return view('article.onearticle', compact('article' , 'comments'));
+        return view('article.onearticle', compact('article', 'comments'));
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param Request $request
+     * @return void
+     */
     public function articles_by_category(Request $request)
     {
-        $articles = article::with('articleCategory')->with('articleStatus')->where('article_category_id',$request['category'])->latest()->paginate(10);
-        return view('article.index' , compact('articles'));
+        $articles = article::with('articleCategory')->with('articleStatus')->where('article_category_id', $request['category'])->latest()->paginate(10);
+        return view('article.index', compact('articles'));
     }
 
     public function articles_by_alfabet(Request $request)
     {
-        $articles = article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['letter'].'%')->latest()->paginate(10);
-        return view('article.index' , compact('articles'));
+        $articles = article::with('articleCategory')->with('articleStatus')->where('title', 'like', '%' . $request['letter'] . '%')->latest()->paginate(10);
+        return view('article.index', compact('articles'));
     }
 
     // public function add_article()
@@ -82,7 +99,8 @@ class ArticleController extends Controller
     //     //
     // }
 
-    public function add_comment(Article $article){
+    public function add_comment(Article $article)
+    {
         $this->validate(request(), [
             'body' => 'required|min:5',
         ]);
@@ -91,34 +109,46 @@ class ArticleController extends Controller
             'body' => request('body'),
             'comment_status_id' => '2',
         ]);
-        session()->flash('commentmessage' , 'نظر شما با موفقیت دریافت شد');
+        session()->flash('commentmessage', 'نظر شما با موفقیت دریافت شد');
         return back();
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param Request $request
+     * @return void
+     */
     public function search_article(Request $request)
     {
-        if(request('category')=='articles'){
-            $articles = article::with('articleCategory')->with('articleStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
-            return view('article.index' , compact('articles'));
+        if (request('category') == 'articles') {
+            $articles = article::with('articleCategory')->with('articleStatus')->where('title', 'like', '%' . $request['search'] . '%')->latest()->paginate(10);
+            return view('article.index', compact('articles'));
         }
-        if(request('category')=='books'){
-            $books = Book::with('bookCategory')->with('bookStatus')->where('name','like','%'.$request['search'].'%')->latest()->paginate(10);
-            return view('book.index' , compact('books'));
+        if (request('category') == 'books') {
+            $books = Book::with('bookCategory')->with('bookStatus')->where('name', 'like', '%' . $request['search'] . '%')->latest()->paginate(10);
+            return view('book.index', compact('books'));
         }
-        if(request('category')=='posts'){
-            $posts = Post::with('postCategory')->with('postStatus')->where('title','like','%'.$request['search'].'%')->latest()->paginate(10);
-            return view('post.index' , compact('posts'));
+        if (request('category') == 'posts') {
+            $posts = Post::with('postCategory')->with('postStatus')->where('title', 'like', '%' . $request['search'] . '%')->latest()->paginate(10);
+            return view('post.index', compact('posts'));
         }
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param Article $article
+     * @return void
+     */
     public function download_article(Article $article)
     {
-        $name=$article->title;
-        $file= public_path('/img/article/'.$article->id.'.pdf');
+        $name = $article->title;
+        $file = public_path('/img/article/' . $article->id . '.pdf');
         $headers = array(
-                  'Content-Type: application/octet-stream',
-                );
+            'Content-Type: application/octet-stream',
+        );
 
-        return response()->download($file, $name.'.pdf', $headers);
+        return response()->download($file, $name . '.pdf', $headers);
     }
 }
