@@ -67,6 +67,9 @@
                     </form>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <a class="link" href="{{ url('admin/login') }}">ورود ادمین</a>
+            </div>
         </div>
     </div>
 </div>

@@ -31,8 +31,8 @@ class ArticleController extends Controller
      */
     public function one_article(Article $article)
     {
-        $comments = $article->articleComments()->get();
-        return view('article.onearticle', compact('article', 'comments'));
+        $article = article::with('articleComments.user')->find($article->id);  //by eager loading
+        return view('article.onearticle', compact('article'));
     }
 
     /**
@@ -107,7 +107,7 @@ class ArticleController extends Controller
         $article->articleComments()->create([
             'user_id' => Auth()->user()->id,
             'body' => request('body'),
-            'comment_status_id' => '2',
+            // 'comment_status_id' => '2',
         ]);
         session()->flash('commentmessage', 'نظر شما با موفقیت دریافت شد');
         return back();

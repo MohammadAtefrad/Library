@@ -12,8 +12,8 @@
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Favicons -->
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    {{-- <link href="/img/favicon.png" rel="icon"> --}}
+    {{-- <link href="/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Google Fonts -->
@@ -32,7 +32,6 @@
 
     <!-- Bootstrap css -->
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <link href="/css/bootstrap-rtl.min.css" rel="stylesheet"> --}}
 
     <!-- serch box style files -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -40,7 +39,6 @@
 
     <!-- Main Stylesheet File -->
     <link href={{ asset("/css/style.css") }} rel="stylesheet">
-    {{-- <link href="/css/styles.rtl.css" rel="stylesheet"> --}}
 
     @yield('styles')
 </head>
@@ -248,9 +246,7 @@ Contact Section
     </div>
 </section><!-- #contact -->
 
-<!--==========================
-Footer
-============================-->
+<!--==========================Footer============================-->
 <footer class="footer">
     <div class="container">
         <div class="row">

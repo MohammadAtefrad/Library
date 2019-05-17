@@ -9,8 +9,8 @@
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    {{-- <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Google Fonts -->
@@ -23,21 +23,18 @@
     <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/lib/animate/animate.min.css" rel="stylesheet">
     <link href="/lib/modal-video/css/modal-video.min.css" rel="stylesheet">
-    <!-- Main Stylesheet File -->
-    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- serch box style files -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
-
-    <!-- Bootstrap css -->
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <link href="/css/bootstrap-rtl.min.css" rel="stylesheet"> --}}
     
-    <link href="/css/fontiran.css" rel="stylesheet">
     <!-- Main Stylesheet File -->
     <link href="/css/style.css" rel="stylesheet">
-    {{-- <link href="/css/styles.rtl.css" rel="stylesheet"> --}}
+
+    <link href="/css/fontiran.css" rel="stylesheet">
     @yield('styles')
 </head>
 
@@ -77,7 +74,7 @@
         </div>
     </header><!-- #header -->
 
-    <div class="d-flex flex-column position-relative text-center justify-content-center align-items-center shadow" style="top:49px;margin-bottom: 20px;">
+    <div class="d-flex flex-column position-relative text-center justify-content-center align-items-center" style="top:49px;margin-bottom: 20px;">
         {{-- flash welcoming message --}}
         @if ($message=session('message'))
         <div class="col-12 my-0 alert alert-success text-center" style="position-top=48px">

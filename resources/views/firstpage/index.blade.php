@@ -12,7 +12,7 @@
   <div class="container-fluid ">
     <div class="row ">
         @foreach ($books as $book)
-        <div class="col-md-6 col-lg-3 pb-4">
+        <div class="col-md-6 col-lg-3 pb-4 bg-white">
           <div class="block-blog shadow">
             <a href="{{ route('book.onebook' , ['book' => $book->id]) }}"><img src="/img/blog/book.jpg" alt="img"></a>
             <div class="content-blog">

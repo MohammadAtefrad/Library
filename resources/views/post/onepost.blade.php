@@ -20,7 +20,7 @@
         <hr>
         <!-- Comments -->
         @if (auth()->check())
-        <div class="well">
+        <div class="well px-3 pt-3">
             @include('layouts.errors')
             <h4>نظرات</h4>
             <hr>
@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <textarea name="body" class="form-control" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">ارسال</button>
+                <button type="submit" class="btn btn-primary mb-1">ارسال</button>
             </form>
         </div>
         @else
@@ -47,13 +47,17 @@
         <hr>
         <!-- Posted Comments -->
         @foreach ($comments as $comment)
-        <div class="media pb-1 border">
-            <div class="d-flex flex-wrap flex-row-reverse media-body text-right">
-                <h6 class="col-12 col-md-6" style="background-color: rgb(237, 237, 237);">{{$comment->user->name}}</h6>
-                <h6 class="col-12 col-md-6" style="background-color: rgb(237, 237, 237);"><small> در {{ jdate($comment->created_at)->format('%d %B %Y') }}</small></h6>
-                <p class="col-12">{{$comment->body}}</p>
+            <div class="d-flex flex-column px-3 pt-3 comments">
+                <div class="d-inline-flex flex-row-reverse text-right">
+                    <div class="px-2" style="color:#FF2654">{{$comment->user->name}}</div>
+                    <span>|</span>
+                    <div class="px-2" style="color:#999"><small> در {{ jdate($comment->created_at)->format('%d %B %Y') }}</small></div> 
+                </div>
+                <div class="px-4">
+                    <p class="pt-2 my-0">{{$comment->body}}</p>
+                    <hr>
+                </div>
             </div>
-        </div>
         @endforeach
     </div>
 </div>

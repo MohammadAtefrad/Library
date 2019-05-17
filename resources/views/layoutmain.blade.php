@@ -12,8 +12,8 @@
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Favicons -->
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    {{-- <link href="/img/favicon.png" rel="icon"> --}}
+    {{-- <link href="/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
@@ -34,7 +34,6 @@
 
     <!-- Bootstrap css -->
     <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <link href="/css/bootstrap-rtl.min.css" rel="stylesheet"> --}}
 
     <!-- serch box style files -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -42,7 +41,6 @@
 
     <!-- Main Stylesheet File -->
     <link href={{ asset("/css/style.css") }} rel="stylesheet">
-    {{-- <link href="/css/styles.rtl.css" rel="stylesheet"> --}}
 
     @yield('styles')
 </head>
@@ -83,16 +81,16 @@
         </div>
     </header><!-- #header -->
 
-    <div class="d-flex flex-column position-relative text-center justify-content-center align-items-center shadow"
-        style="top:49px;margin-bottom: 20px;">
+    <div class="d-flex flex-column position-relative text-center justify-content-center align-items-center" style="top:49px;margin-bottom: 20px;">
         {{-- flash welcoming message --}}
         @if ($message=session('message'))
-        <div class="col-12 my-0 alert alert-success text-center" style="position-top=48px">
-            {{$message}}
-        </div>
+            <div class="col-12 my-0 alert alert-success">
+                {{$message}}
+            </div>
         @endif
         {{-- end message --}}
-        <img class="img-fluid rounded" src="/img/newsletter-bg.jpg" style="">
+        {{-- <img class="img-fluid rounded" src="/img/newsletter-bg.jpg" style=""> --}}
+        <img class="img-fluid rounded" src="/img/video-bg.jpg" style="">
         <div class="position-absolute text-white">
             {{-- search box --}}
             <div class="row col-10 col-md-10 mx-auto s003" style="dir:rtl">
@@ -430,9 +428,7 @@
         </div>
     </section>
 
-    <!--==========================
-    Blog Section
-  ============================-->
+    <!--========================== Blog Section  ============================-->
     <section id="blog" class="padd-section wow fadeInUp">
 
         <div class="container">
@@ -492,13 +488,10 @@
                 <div class="row justify-content-center">
                     <div class="col-md-9 col-lg-6">
                         <form class="form-inline" method="POST" action="#">
-
                             <input type="email" class="form-control " placeholder="آدرس ایمیل" name="email">
                             <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>اشتراک در
                                 خبرنامه</button>
-
                         </form>
-
                     </div>
                 </div>
 
@@ -508,7 +501,6 @@
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
-
 
             </div>
         </div>
@@ -591,9 +583,7 @@
     </section>
     <!-- #contact -->
 
-    <!--==========================
-Footer
-============================-->
+    <!--==========================Footer============================-->
     <footer class="footer">
         <div class="container">
             <div class="row">
