@@ -17,18 +17,22 @@ body {
 }
 
 .jumbotron {
-    background-color:white
+    background-color: white
 }
 
 .well {
-    background-color:white
+    background-color: white
 }
 
 .comments {
-    background-color:white
+    background-color: white
 }
 
-hr{
+.comments .comments {
+    margin-right: 40px;
+}
+
+hr {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }

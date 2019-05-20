@@ -52,7 +52,7 @@ class Article extends Model
      */
     public function articleComments()
     {
-        return $this->hasMany('App\ArticleComment');
+        return $this->hasMany('App\ArticleComment')->whereNull('reference_comment_id');
     }
 
     /**

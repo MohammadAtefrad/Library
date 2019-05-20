@@ -46,6 +46,7 @@ class BookController extends Controller
             'user_id' => Auth()->user()->id,
             'body' => request('body'),
             // 'comment_status_id' => '2',
+            'reference_comment_id' => request('comment_id') ?? null,
         ]);
         session()->flash('commentmessage', 'نظر شما با موفقیت دریافت شد');
         return back();

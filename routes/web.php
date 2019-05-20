@@ -87,6 +87,6 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Event::listen('illuminate.query', function ($query) {
-    var_dump($query);
-});
+// Event::listen('illuminate.query', function ($query) {
+//     var_dump($query);
+// });

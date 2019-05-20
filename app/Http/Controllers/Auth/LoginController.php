@@ -28,6 +28,19 @@ class LoginController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * overrides showLoginForm() for redirect to prev url
+     *
+     * @return void
+     */
+    public function showLoginForm()
+    {
+        if (!session()->has('url.intended')) {
+            session(['url.intended' => url()->previous()]);
+        }
+        return view('auth.login');
+    }
+
+    /**
      * Create a new controller instance.
      *
      * @return void

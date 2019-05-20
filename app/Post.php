@@ -22,7 +22,7 @@ use Backpack\CRUD\CrudTrait;
 class Post extends Model
 {
     use CrudTrait;
-    
+
     /**
      * @var array
      */
@@ -57,6 +57,6 @@ class Post extends Model
      */
     public function postComments()
     {
-        return $this->hasMany('App\PostComment');
+        return $this->hasMany('App\PostComment')->whereNull('reference_comment_id');
     }
 }

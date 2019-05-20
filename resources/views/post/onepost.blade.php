@@ -5,13 +5,16 @@
         <div class="jumbotron shadow p-4">
             <div class="row">
                 <div class="col-8">
-                    <a href="{{ route('post.onepost' , ['post' => $post->id]) }}"><h6 class="">{{ $post->title }}</h6></a>
+                    <a href="{{ route('post.onepost' , ['post' => $post->id]) }}">
+                        <h6 class="">{{ $post->title }}</h6>
+                    </a>
                     <p class="">نویسنده : {{ $post->author }}</p>
                     <p class="">دسته بندی : {{ $post->postCategory->post_category }}</p>
                     <p class="font-weight-light">تاریخ : {{ jdate($post->published_date)->format('%d %B %Y') }}</p>
                 </div>
                 <div class="col-4">
-                    <a href="{{ route('post.onepost' , ['post' => $post->id]) }}"><img class="img-fluid float-right shadow" src="/img/blog/book.jpg" alt="img"></a>
+                    <a href="{{ route('post.onepost' , ['post' => $post->id]) }}"><img
+                            class="img-fluid float-right shadow" src="/img/blog/book.jpg" alt="img"></a>
                 </div>
             </div>
             <hr>
@@ -27,38 +30,26 @@
             {{-- flash welcoming message --}}
             @if ($message=session('commentmessage'))
             <div class="col-12 my-0 alert alert-success text-center" style="position-top=48px">
-            {{$message}}
+                {{$message}}
             </div>
             <hr>
             @endif
             {{-- end message --}}
             <form role="form" method="POST" action="{{ route('postcomment.add' , ['post'=>$post->id]) }}">
-                {{ csrf_field() }}
+                @csrf
                 <label for="body">متن :</label>
                 <div class="form-group">
-                    <textarea name="body" class="form-control" rows="3"></textarea>
+                    <textarea name="body" class="form-control" rows="3">{{ old('body') }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mb-1">ارسال</button>
             </form>
         </div>
         @else
-        <a href="/register">برای ارسال کامنت باید عضو وبسایت باشید</a>
+        <a href="/login">برای ارسال کامنت ابتدا وارد شوید</a>
         @endif
         <hr>
         <!-- Posted Comments -->
-        @foreach ($comments as $comment)
-            <div class="d-flex flex-column px-3 pt-3 comments">
-                <div class="d-inline-flex flex-row-reverse text-right">
-                    <div class="px-2" style="color:#FF2654">{{$comment->user->name}}</div>
-                    <span>|</span>
-                    <div class="px-2" style="color:#999"><small> در {{ jdate($comment->created_at)->format('%d %B %Y') }}</small></div> 
-                </div>
-                <div class="px-4">
-                    <p class="pt-2 my-0">{{$comment->body}}</p>
-                    <hr>
-                </div>
-            </div>
-        @endforeach
+        @include('post.replies', ['comments' => $post->postComments])
     </div>
 </div>
 @endsection

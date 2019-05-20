@@ -671,7 +671,6 @@
             searchEnabled: false,
             itemSelectText: '',
         });
-
     </script>
 </body>
 

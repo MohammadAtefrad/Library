@@ -29,14 +29,14 @@ class Book extends Model
 {
     use CrudTrait;
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | GLOBAL VARIABLES
   |--------------------------------------------------------------------------
   */
 
-  protected $table = 'books';
-  protected $primaryKey = 'id';
+    protected $table = 'books';
+    protected $primaryKey = 'id';
     /**
      * @var array
      */
@@ -63,7 +63,7 @@ class Book extends Model
      */
     public function bookComments()
     {
-        return $this->hasMany('App\BookComment');
+        return $this->hasMany('App\BookComment')->whereNull('reference_comment_id');
     }
 
     /**
